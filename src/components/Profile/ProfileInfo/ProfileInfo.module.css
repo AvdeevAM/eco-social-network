@@ -12,3 +12,7 @@
     margin-left: 10px;
     margin-bottom: -5px;
 }
+
+.profilePhoto {
+    max-width: 200px;
+}
