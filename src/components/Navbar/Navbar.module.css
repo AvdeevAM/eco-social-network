@@ -1,0 +1,30 @@
+.nav {
+  grid-area: n;
+  background-color: yellowgreen;
+  padding: 20px;
+}
+
+.item a {
+  color: white;
+  text-decoration: none;
+}
+
+.item a.activeLink {
+  color: gold;
+}
+
+.friends {
+  margin-top: 50px;
+}
+
+.friendsContent {
+  margin-top: -15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.friendsContent img {
+  width: 40px;
+  border: 2px solid rgb(45, 137, 160);
+  border-radius: 50%;
+}

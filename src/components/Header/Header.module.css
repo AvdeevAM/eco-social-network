@@ -1,0 +1,26 @@
+.header {
+  grid-area: h;
+  background-color: rebeccapurple;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header img {
+  width: 40px;
+}
+
+.loginBlock div {
+  width: 320px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 20px;
+  color: wheat;
+}
+
+.loginBlock div img {
+  width: 50px;
+  height: 50px;
+  align-self: center;
+}
