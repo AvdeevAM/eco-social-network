@@ -2,8 +2,8 @@
     padding: 10px;
 }
 
-.contacts>ul {
-    margin: 0 0 20px -15px;
+.contacts {
+    padding-left: 10px;
 }
 
 .lookingForAJob>img {
@@ -15,4 +15,10 @@
 
 .profilePhoto {
     max-width: 200px;
+}
+
+.error {
+    color: red;
+    font-weight: 700;
+    font-size: 12px;
 }
