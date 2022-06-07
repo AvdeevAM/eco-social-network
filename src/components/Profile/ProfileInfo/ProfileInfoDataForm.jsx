@@ -10,7 +10,45 @@ const ProfileInfoDataForm = (props) => {
       .min(3, "Too Short!")
       .max(25, "Too Long!")
       .required("Required"),
-    aboutMe: yup.string().typeError("Must be a string value"),
+    aboutMe: yup
+      .string()
+      .min(3, "Too Short!")
+      .max(35, "Too Long!")
+      .required("Required"),
+    contacts: yup.object({
+      facebook: yup
+        .string()
+        .min(3, "Too Short!")
+        .required("Required"),
+      website: yup
+        .string()
+        .min(3, "Too Short!")
+        .required("Required"),
+      vk: yup
+        .string()
+        .min(3, "Too Short!")
+        .required("Required"),
+        twitter: yup
+        .string()
+        .min(3, "Too Short!")
+        .required("Required"),
+        instagram: yup
+        .string()
+        .min(3, "Too Short!")
+        .required("Required"),
+        youtube: yup
+        .string()
+        .min(3, "Too Short!")
+        .required("Required"),
+        github: yup
+        .string()
+        .min(3, "Too Short!")
+        .required("Required"),
+        mainLink: yup
+        .string()
+        .min(3, "Too Short!")
+        .required("Required"),  
+    }),
   });
   return (
     <Formik
@@ -22,6 +60,7 @@ const ProfileInfoDataForm = (props) => {
     >
       {(formik) => (
         <Form onSubmit={formik.handleSubmit}>
+          {formik.status}
           <div>
             <button type={"submit"}>Save</button>
           </div>
@@ -40,12 +79,12 @@ const ProfileInfoDataForm = (props) => {
           <b>Contacts</b>:
           <div className={s.contacts}>
             {Object.keys(props.profile.contacts).map((key) => {
-              formik.errors["contacts." + key] && (
-                <p className={s.error}>{formik.errors["contacts." + key]}</p>
-              );
               return (
                 <div key={key}>
                   {key}: {createField("input", "contacts." + key, key)}
+                  {formik.errors.contacts?.[key] && (
+                    <p className={s.error}>{formik.errors.contacts?.[key]}</p>
+                  )}
                 </div>
               );
             })}

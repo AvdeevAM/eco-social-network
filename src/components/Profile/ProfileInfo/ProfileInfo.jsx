@@ -11,8 +11,10 @@ import ProfileInfoDataForm from "./ProfileInfoDataForm";
 const ProfileInfo = (props) => {
   let [editMode, setEditMode] = useState(false);
 
-  const saveProfileInfoData = (values) => {
-    props.saveData(values);
+  const saveProfileInfoData = (values, submitProps) => {
+    props.saveData(values, submitProps.setSubmitting, submitProps.setStatus);
+    submitProps.setSubmitting(true);
+
     setEditMode(false);
   };
 
