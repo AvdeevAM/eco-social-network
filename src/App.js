@@ -44,7 +44,6 @@ class App extends React.Component {
         <div className="app-wrapper-content">
           <Suspense fallback={<Preloader />}>
             <Routes>
-              {/* <Route path="/profile/:userId" element={<ProfileContainer />} /> */}
               <Route path="/profile/*" element={<ProfileContainer />} />
               <Route path="/dialogs/*" element={<DialogsContainer />} />
               <Route path="/users/" element={<UsersContainer />} />
@@ -52,7 +51,10 @@ class App extends React.Component {
               <Route path="/music" element={<Music />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/friends" element={<Friends />} />
-              <Route path="/login" element={<Login />} />
+              <Route
+                path="/login"
+                element={<Login captchaUrl={this.props.captchaUrl} />}
+              />
             </Routes>
           </Suspense>
         </div>
@@ -63,6 +65,7 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     initialized: state.app.initialized,
+    captchaUrl: state.auth.captchaUrl,
   };
 };
 

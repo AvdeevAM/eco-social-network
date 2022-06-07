@@ -1,7 +1,8 @@
-import { authAPI, profileAPI } from "../api/api";
+import { authAPI, profileAPI, securityAPI } from "../api/api";
 
 const SET_USER_DATA = "auth/SET_USER_DATA";
 const SET_USER_PHOTO = "auth/SET_USER_PHOTO";
+const GET_CAPTCHA_URL_SUCCESS = "auth/GET_CAPTCHA_URL_SUCCESS";
 
 let initialState = {
   userId: null,
@@ -9,6 +10,7 @@ let initialState = {
   email: null,
   isAuth: false,
   photo: null,
+  captchaUrl: null,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -19,9 +21,10 @@ const authReducer = (state = initialState, action) => {
         ...action.data,
       };
     case SET_USER_PHOTO:
+    case GET_CAPTCHA_URL_SUCCESS:
       return {
         ...state,
-        photo: action.photo,
+        ...action.payload,
       };
     default:
       return state;
@@ -34,7 +37,11 @@ export const setAuthUserData = (userId, login, email, isAuth) => ({
 });
 export const setUserPhoto = (photo) => ({
   type: SET_USER_PHOTO,
-  photo,
+  payload: { photo },
+});
+export const getCaptchaUrlSuccess = (captchaUrl) => ({
+  type: GET_CAPTCHA_URL_SUCCESS,
+  payload: { captchaUrl },
 });
 
 export const getAuthUserData = () => {
@@ -53,32 +60,40 @@ export const getAuthUserData = () => {
     }
   };
 };
-
 export const login = (
   email,
   password,
   rememberMe,
+  captcha,
   setStatus,
   setSubmitting
 ) => {
   return async (dispatch) => {
-    let data = await authAPI.login(email, password, rememberMe);
+    let data = await authAPI.login(email, password, rememberMe, captcha);
     if (data.resultCode === 0) {
       dispatch(getAuthUserData());
     } else {
+      if (data.resultCode === 10) {
+        dispatch(getCaptchaUrl());
+      }
       setStatus(data.messages);
     }
     setSubmitting(false);
+    dispatch(getCaptchaUrlSuccess(null));
     return data;
   };
 };
-
 export const logout = () => async (dispatch) => {
   let data = await authAPI.logout();
   if (data.resultCode === 0) {
     dispatch(setAuthUserData(null, null, null, false));
   }
   return data;
+};
+export const getCaptchaUrl = () => async (dispatch) => {
+  let data = await securityAPI.getCaptcha();
+  let captchaUrl = data.url;
+  dispatch(getCaptchaUrlSuccess(captchaUrl));
 };
 
 export default authReducer;

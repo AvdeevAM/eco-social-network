@@ -13,6 +13,7 @@ const Login = (props) => {
       values.email,
       values.password,
       values.rememberMe,
+      values.captcha,
       submitProps.setStatus,
       submitProps.setSubmitting
     );
@@ -30,6 +31,7 @@ const Login = (props) => {
       .min(3, "Too Short!")
       .max(20, "Too Long!")
       .required("Required"),
+    captcha: yup.string(),
   });
 
   if (props.isAuth) {
@@ -74,6 +76,9 @@ const FormikLogin = (props) => {
               { type: "checkbox" },
               "Remember me"
             )}
+            {props.captchaUrl && <img src={props.captchaUrl} alt="" />}
+            {props.captchaUrl &&
+              createField("input", "captcha", "Enter symbols from image")}
             <div>
               <button type="submit" disabled={!formik.isValid && !formik.dirty}>
                 Log in
