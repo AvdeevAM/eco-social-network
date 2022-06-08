@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import "./App.css";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Navbar from "./components/Navbar/Navbar";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -13,10 +13,6 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 import { WithRouter } from "./HOC/WithRouter";
 import Preloader from "./components/common/Preloader/Preloader";
-
-// import DialogsContainer from "./components/Dialogs/DialogsContainer";
-// import ProfileContainer from "./components/Profile/ProfileContainer";
-// import UsersContainer from "./components/Users/UsersContainer";
 
 const DialogsContainer = React.lazy(() =>
   import("./components/Dialogs/DialogsContainer")
@@ -29,8 +25,23 @@ const UsersContainer = React.lazy(() =>
 );
 
 class App extends React.Component {
+  catchAllUnhandledRejections = (promiseRejectionEvent) => {
+    alert(promiseRejectionEvent);
+  };
+
   componentDidMount() {
     this.props.initializeApp();
+    window.addEventListener(
+      "unhandledrejection",
+      this.catchAllUnhandledRejections
+    );
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener(
+      "unhandledrejection",
+      this.catchAllUnhandledRejections
+    );
   }
 
   render() {
@@ -44,6 +55,7 @@ class App extends React.Component {
         <div className="app-wrapper-content">
           <Suspense fallback={<Preloader />}>
             <Routes>
+              <Route path="/" element={<Navigate to="/profile" />} />
               <Route path="/profile/*" element={<ProfileContainer />} />
               <Route path="/dialogs/*" element={<DialogsContainer />} />
               <Route path="/users/" element={<UsersContainer />} />
@@ -55,6 +67,7 @@ class App extends React.Component {
                 path="/login"
                 element={<Login captchaUrl={this.props.captchaUrl} />}
               />
+              <Route path="*" element={<div>404 NOT FOUND</div>} />
             </Routes>
           </Suspense>
         </div>

@@ -22,7 +22,7 @@ const dialogsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SEND_MESSAGE: {
       let newMessage = {
-        id: 5,
+        id: state.messages.length + 1,
         message: action.message,
         isMine: true,
       };
