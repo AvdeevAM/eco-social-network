@@ -1,16 +1,23 @@
 import React from "react";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import { Formik, Field, Form } from "formik";
+import { Formik, Form } from "formik";
 import * as yup from "yup";
+import { createField } from "../../../utils/FormControls";
+import { createButton } from "../../common/Button/Button";
 
 const MyPosts = (props) => {
   let postsElements = props.posts.map((p) => (
     <Post message={p.message} likesCount={p.likesCount} key={p.id} />
   ));
 
-  const addPost = (values) => {
+  const addPost = (values, { resetForm }) => {
     props.addPost(values.newPostText);
+    resetForm({
+      values: {
+        newPostText: "",
+      },
+    });
   };
 
   const postSchema = yup.object().shape({
@@ -24,14 +31,14 @@ const MyPosts = (props) => {
     <div className={s.postsBlock}>
       <h3>My posts</h3>
       <div>
-        <FormikProfile addPost={addPost} postSchema={postSchema} />
+        <FormikMyPosts addPost={addPost} postSchema={postSchema} />
       </div>
       <div className={s.posts}>{postsElements}</div>
     </div>
   );
 };
 
-const FormikProfile = (props) => {
+const FormikMyPosts = (props) => {
   return (
     <Formik
       onSubmit={props.addPost}
@@ -40,21 +47,13 @@ const FormikProfile = (props) => {
     >
       {({ handleSubmit, isValid, dirty, touched, errors }) => (
         <Form onSubmit={handleSubmit} className={s.newMessage}>
-          <div>
-            <Field
-              component="textarea"
-              placeholder="Type new post"
-              name="newPostText"
-            />
-            {touched.newPostText && errors.newPostText && (
-              <p className={s.error}>{errors.newPostText}</p>
-            )}
-          </div>
-          <div>
-            <button disabled={!isValid && !dirty} type="submit">
-              Add post
-            </button>
-          </div>
+          {createField("textarea", "newPostText", "Type new post")}
+          {touched.newPostText && errors.newPostText && (
+            <p className={s.error}>{errors.newPostText}</p>
+          )}
+          {createButton(undefined, "Add post", "submit", {
+            disabled: !isValid && !dirty && touched.newMessageBody,
+          })}
         </Form>
       )}
     </Formik>

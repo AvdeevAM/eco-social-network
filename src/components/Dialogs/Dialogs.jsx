@@ -4,6 +4,7 @@ import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
 import { Formik, Field, Form } from "formik";
 import * as yup from "yup";
+import { createButton } from "../common/Button/Button";
 
 const Dialogs = (props) => {
   let dialogsElements = props.messagesPage.dialogs.map((d) => (
@@ -13,14 +14,19 @@ const Dialogs = (props) => {
     <Message message={m} key={m.id} />
   ));
 
-  let addNewMessage = (values) => {
+  let addNewMessage = (values, { resetForm }) => {
     props.sendMessage(values.newMessageBody);
+    resetForm({
+      values: {
+        newMessageBody: "",
+      },
+    });
   };
 
   const messageSchema = yup.object().shape({
     newMessageBody: yup
       .string()
-      .max(10, "Message is too long")
+      .max(15, "Message is too long")
       .required("Type text to send message"),
   });
 
@@ -29,7 +35,10 @@ const Dialogs = (props) => {
       <div className={s.dialogsItems}>{dialogsElements}</div>
       <div className={s.messages}>
         {messagesElements}
-        <FormikDialogs addNewMessage={addNewMessage} messageSchema={messageSchema} />
+        <FormikDialogs
+          addNewMessage={addNewMessage}
+          messageSchema={messageSchema}
+        />
       </div>
     </div>
   );
@@ -42,7 +51,7 @@ const FormikDialogs = (props) => {
       initialValues={{}}
       validationSchema={props.messageSchema}
     >
-      {({ handleSubmit, isValid, dirty, errors, touched}) => (
+      {({ handleSubmit, isValid, dirty, errors, touched }) => (
         <Form onSubmit={handleSubmit} className={s.newMessage}>
           <div>
             <Field
@@ -55,7 +64,9 @@ const FormikDialogs = (props) => {
             )}
           </div>
           <div>
-            <button disabled={!isValid && !dirty && touched.newMessageBody} type="submit">Send message</button>
+            {createButton(undefined, "Send message", "submit", {
+              disabled: !isValid && !dirty && touched.newMessageBody,
+            })}
           </div>
         </Form>
       )}

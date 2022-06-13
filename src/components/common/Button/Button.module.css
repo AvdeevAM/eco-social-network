@@ -1,44 +1,4 @@
-.descriptionBlock {
-    padding: 10px;
-}
-
-.contacts {
-    padding-left: 10px;
-}
-
-.lookingForAJob>img {
-    width: 25px;
-    height: 25px;
-    margin-left: 10px;
-    margin-bottom: -5px;
-}
-
-.profilePhoto {
-    max-width: 200px;
-}
-
-.error {
-    color: red;
-    font-weight: 700;
-    font-size: 12px;
-}
-
-.imageUploadWrapper {
-    width: 130px;
-    height: 33px;
-    position: relative;
-}
-
-.imageUploadInput {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    z-index: 1;
-}
-
-.imageUploadLabel {
-    position: absolute;
+.defaultButton>button {
     appearance: none;
     backface-visibility: hidden;
     background-color: #27ae60;
@@ -57,6 +17,7 @@
     outline: none;
     overflow: hidden;
     padding: 4px 14px;
+    position: relative;
     text-align: center;
     text-decoration: none;
     transform: translate3d(0, 0, 0);
@@ -64,21 +25,22 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    vertical-align: top;
     white-space: nowrap;
 }
 
-.imageUploadWrapper:hover label {
+.defaultButton>button:hover {
     background-color: #1e8449;
     opacity: 1;
     transform: translateY(0);
     transition-duration: .35s;
 }
 
-.imageUploadWrapper:active label {
+.defaultButton>button:active {
     transform: translateY(2px);
     transition-duration: .35s;
 }
 
-.imageUploadWrapper:hover label {
+.defaultButton>button:hover {
     box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
 }

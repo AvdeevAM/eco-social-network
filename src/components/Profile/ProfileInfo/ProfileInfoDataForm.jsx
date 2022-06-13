@@ -2,6 +2,7 @@ import { Formik, Form } from "formik";
 import * as yup from "yup";
 import s from "./ProfileInfo.module.css";
 import { createField } from "../../../utils/FormControls";
+import { createButton } from "../../common/Button/Button";
 
 const ProfileInfoDataForm = (props) => {
   const profileInfoDataFormSchema = yup.object().shape({
@@ -16,38 +17,14 @@ const ProfileInfoDataForm = (props) => {
       .max(35, "Too Long!")
       .required("Required"),
     contacts: yup.object({
-      facebook: yup
-        .string()
-        .min(3, "Too Short!")
-        .required("Required"),
-      website: yup
-        .string()
-        .min(3, "Too Short!")
-        .required("Required"),
-      vk: yup
-        .string()
-        .min(3, "Too Short!")
-        .required("Required"),
-        twitter: yup
-        .string()
-        .min(3, "Too Short!")
-        .required("Required"),
-        instagram: yup
-        .string()
-        .min(3, "Too Short!")
-        .required("Required"),
-        youtube: yup
-        .string()
-        .min(3, "Too Short!")
-        .required("Required"),
-        github: yup
-        .string()
-        .min(3, "Too Short!")
-        .required("Required"),
-        mainLink: yup
-        .string()
-        .min(3, "Too Short!")
-        .required("Required"),  
+      facebook: yup.string().min(3, "Too Short!").required("Required"),
+      website: yup.string().min(3, "Too Short!").required("Required"),
+      vk: yup.string().min(3, "Too Short!").required("Required"),
+      twitter: yup.string().min(3, "Too Short!").required("Required"),
+      instagram: yup.string().min(3, "Too Short!").required("Required"),
+      youtube: yup.string().min(3, "Too Short!").required("Required"),
+      github: yup.string().min(3, "Too Short!").required("Required"),
+      mainLink: yup.string().min(3, "Too Short!").required("Required"),
     }),
   });
   return (
@@ -61,9 +38,7 @@ const ProfileInfoDataForm = (props) => {
       {(formik) => (
         <Form onSubmit={formik.handleSubmit}>
           {formik.status}
-          <div>
-            <button type={"submit"}>Save</button>
-          </div>
+          {createButton(undefined, "Save", "submit", { props: null })}
           <div className={s.fullName}>
             <b>Full name</b>: {createField("input", "fullName", "Full name")}
             {formik.errors.fullName && (

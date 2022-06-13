@@ -7,6 +7,7 @@ import ProfileStatusWithHooK from "./ProfileStatusWithHooks";
 import userPhoto from "./../../../assets/images/default_avatar_small.png";
 import Contact from "./Contact";
 import ProfileInfoDataForm from "./ProfileInfoDataForm";
+import { createButton } from "../../common/Button/Button";
 
 const ProfileInfo = (props) => {
   let [editMode, setEditMode] = useState(false);
@@ -14,7 +15,6 @@ const ProfileInfo = (props) => {
   const saveProfileInfoData = (values, submitProps) => {
     props.saveData(values, submitProps.setSubmitting, submitProps.setStatus);
     submitProps.setSubmitting(true);
-
     setEditMode(false);
   };
 
@@ -37,7 +37,19 @@ const ProfileInfo = (props) => {
         src={props.profile.photos.large || userPhoto}
         alt=""
       />
-      {props.isOwner && <input type="file" onChange={onPhotoSelected} />}
+      {props.isOwner && (
+        <div className={s.imageUploadWrapper}>
+          <label className={s.imageUploadLabel} htmlFor="imageUpload">
+            Change picture
+          </label>
+          <input
+            className={s.imageUploadInput}
+            type="file"
+            name="imageUpload"
+            onChange={onPhotoSelected}
+          />
+        </div>
+      )}
       <ProfileStatusWithHooK
         status={props.status}
         updateStatus={props.updateStatus}
@@ -62,11 +74,10 @@ const ProfileInfo = (props) => {
 const ProfileInfoData = (props) => {
   return (
     <div>
-      {props.isOwner && (
-        <div>
-          <button onClick={props.switchOnEditMode}>Edit</button>
-        </div>
-      )}
+      {props.isOwner &&
+        createButton(undefined, "Edit", "button", {
+          onClick: props.switchOnEditMode,
+        })}
       <div className={s.aboutMe}>
         <b>About me</b>: {props.profile.aboutMe}
       </div>

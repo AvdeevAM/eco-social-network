@@ -1,7 +1,23 @@
-.nav {
+.navWrapper {
   grid-area: n;
   background-color: yellowgreen;
-  padding: 20px;
+  padding-left: 20px;
+  display: flex;
+  height: 100%;
+  border-radius: 0 0 0 15px;
+}
+
+.nav {
+  top: 10%;
+  position: fixed;
+  font-weight: 600;
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  margin-bottom: 5px;
 }
 
 .item a {
@@ -14,7 +30,7 @@
 }
 
 .friends {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .friendsContent {
@@ -27,4 +43,10 @@
   width: 40px;
   border: 2px solid rgb(45, 137, 160);
   border-radius: 50%;
+}
+
+.treeLogo {
+  margin-left: -10px;
+  position: fixed;
+  bottom: -10px;
 }

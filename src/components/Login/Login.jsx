@@ -54,7 +54,10 @@ const FormikLogin = (props) => {
   return (
     <Formik
       onSubmit={props.submitLogin}
-      initialValues={{}}
+      initialValues={{
+        email: "",
+        password: "",
+      }}
       validationSchema={props.loginSchema}
     >
       {(formik) => (
