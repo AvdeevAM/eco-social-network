@@ -1,5 +1,6 @@
 import { Field } from "formik";
 import React from "react";
+import s from "./FormControls.module.css";
 
 export const Textarea = (props) => {
   return (
@@ -27,6 +28,7 @@ export const createField = (
   return (
     <div>
       <Field
+        class={s.defaultField}
         component={component}
         name={name}
         placeholder={placeholder}

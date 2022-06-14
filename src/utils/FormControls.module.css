@@ -1,0 +1,22 @@
+.defaultField {
+    line-height: 1.5em;
+    border: solid 1px rgb(49, 121, 16);
+    border-radius: 5px;
+    padding: 5px 5px;
+    display: flex;
+    align-self: center;
+    width: max-content;
+    box-sizing: border-box;
+    background-color: rgba(216, 216, 216, 0.897);
+}
+
+input[type='checkbox'] {
+    display: inline;
+    width: 18px;
+    height: 18px;
+    background: #bfdfce;
+    cursor: pointer;
+    border: 1px solid #184a6d;
+    border-radius: 0px;
+    background-color: #1e8449;
+}

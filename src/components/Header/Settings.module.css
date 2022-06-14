@@ -1,0 +1,127 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 300px;
+  width: fit-content;
+  height: 150px;
+  position: absolute;
+  left: -400%;
+  top: 110%;
+  background-color: aqua;
+  border-radius: 5px;
+}
+
+.settingsInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 22px;
+  margin-left: 5%;
+  color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 100;
+}
+
+.settings h4 {
+  margin: 0% 20%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  font-weight: 800;
+}
+
+.settingsButtons {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.switchWrapper {
+  position: relative;
+}
+
+.switchWrapper p {
+  width: 90px;
+  margin: 0% 20%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  font-weight: 500;
+}
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  top: 10%;
+  left: 130%;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(0, 211, 70);
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+  z-index: 1;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: rgb(255, 255, 255);
+  -webkit-transition: .3s;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #00388be7;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #00388be7;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.logoutButton>button {
+  background-color: #f0d3d3;
+  border: 1.5px solid #6d0101;
+  padding: 0px 14px;
+  height: 32px;
+  color: black
+}
+
+.logoutButton>button:hover {
+  background-color: #8f1010;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+  color: white
+}
+
+.logoutButton>button:active {
+  transform: translateY(2px);
+  transition-duration: .35s;
+}

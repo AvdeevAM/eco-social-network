@@ -36,7 +36,11 @@ const ProfileInfoDataForm = (props) => {
       validationSchema={profileInfoDataFormSchema}
     >
       {(formik) => (
-        <Form onSubmit={formik.handleSubmit}>
+        <Form
+          onSubmit={formik.handleSubmit}
+          className={s.form}
+          autoComplete="off"
+        >
           {formik.status}
           {createButton(undefined, "Save", "submit", { props: null })}
           <div className={s.fullName}>
@@ -65,8 +69,15 @@ const ProfileInfoDataForm = (props) => {
             })}
           </div>
           <div className={s.lookingForAJob}>
-            <b>Looking for a job right now:</b>
-            {createField("input", "lookingForAJob", null, { type: "checkbox" })}
+            <b>
+              {createField(
+                "input",
+                "lookingForAJob",
+                null,
+                { type: "checkbox" },
+                "Looking for a job right now"
+              )}
+            </b>
           </div>
           <div className={s.lookingForAJobDescription}>
             <b>Job description</b>:{" "}

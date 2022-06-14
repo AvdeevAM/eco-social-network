@@ -4,12 +4,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 15px 15px 0 0;
   position: fixed;
   width: 1200px;
-
   min-height: 70px;
-  z-index: 10;
+  z-index: 11;
 }
 
 .headerLogo {
@@ -17,16 +15,7 @@
 }
 
 .loginBlock {
-  width: 320px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 20px;
-  color: wheat;
-}
-
-.avatarWrapper {
+  margin-right: 1%;
   position: relative;
   width: 60px;
   height: 60px;
@@ -40,89 +29,5 @@
   top: 0;
   align-self: center;
   position: absolute;
-}
-
-.settings {
-  width: 150px;
-  height: 120px;
-  position: absolute;
-  left: -150%;
-  top: 105%;
-  background-color: aqua;
-  border-radius: 5px;
-}
-
-.settings p {
-  margin-left: 5px;
-  color: black;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 100;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-  top: -35px;
-  left: 75px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(0, 211, 70);
-  -webkit-transition: .4s;
-  transition: .4s;
-  border-radius: 34px;
-  z-index: 1;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 14px;
-  width: 14px;
-  left: 3px;
-  bottom: 3px;
-  background-color: rgb(255, 255, 255);
-  -webkit-transition: .3s;
-  transition: .3s;
-  border-radius: 50%;
-}
-
-input:checked+.slider {
-  background-color: #00388be7;
-}
-
-input:focus+.slider {
-  box-shadow: 0 0 1px #00388be7;
-}
-
-input:checked+.slider:before {
-  -webkit-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  transform: translateX(20px);
-}
-
-.switchLabel {
-  position: absolute;
-  top: 20px;
-  left: 45px;
-}
-
-.switchLabelDark {
-  position: absolute;
-  top: 20px;
-  left: 100px;
+  z-index: 0;
 }

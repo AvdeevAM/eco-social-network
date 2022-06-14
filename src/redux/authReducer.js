@@ -3,10 +3,12 @@ import { authAPI, profileAPI, securityAPI } from "../api/api";
 const SET_USER_DATA = "auth/SET_USER_DATA";
 const SET_USER_PHOTO = "auth/SET_USER_PHOTO";
 const GET_CAPTCHA_URL_SUCCESS = "auth/GET_CAPTCHA_URL_SUCCESS";
+const SET_AUTH_USER_FULL_NAME = "auth/SET_AUTH_USER_FULL_NAME";
 
 let initialState = {
   userId: null,
   login: null,
+  fullName: null,
   email: null,
   isAuth: false,
   photo: null,
@@ -22,6 +24,7 @@ const authReducer = (state = initialState, action) => {
       };
     case SET_USER_PHOTO:
     case GET_CAPTCHA_URL_SUCCESS:
+    case SET_AUTH_USER_FULL_NAME:
       return {
         ...state,
         ...action.payload,
@@ -38,6 +41,10 @@ export const setAuthUserData = (userId, login, email, isAuth) => ({
 export const setUserPhoto = (photo) => ({
   type: SET_USER_PHOTO,
   payload: { photo },
+});
+export const setAuthUserFullName = (fullName) => ({
+  type: SET_AUTH_USER_FULL_NAME,
+  payload: { fullName },
 });
 export const getCaptchaUrlSuccess = (captchaUrl) => ({
   type: GET_CAPTCHA_URL_SUCCESS,
@@ -56,6 +63,7 @@ export const getAuthUserData = () => {
     }
     if (data.resultCode === 0) {
       let profile = await profileAPI.getProfile(userData.id);
+      dispatch(setAuthUserFullName(profile.fullName));
       dispatch(setUserPhoto(profile.photos.small));
     }
   };

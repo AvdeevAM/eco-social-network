@@ -6,6 +6,7 @@ import { login } from "./../../redux/authReducer";
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { createField } from "../../utils/FormControls";
+import { createButton } from "../common/Button/Button";
 
 const Login = (props) => {
   let submitLogin = (values, submitProps) => {
@@ -83,9 +84,9 @@ const FormikLogin = (props) => {
             {props.captchaUrl &&
               createField("input", "captcha", "Enter symbols from image")}
             <div>
-              <button type="submit" disabled={!formik.isValid && !formik.dirty}>
-                Log in
-              </button>
+              {createButton(undefined, "Log in", "submit", {
+                disabled: !formik.isValid && !formik.dirty,
+              })}
             </div>
           </div>
         </Form>

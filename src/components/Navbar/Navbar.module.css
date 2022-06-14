@@ -1,15 +1,16 @@
 .navWrapper {
+  position: sticky;
   grid-area: n;
   background-color: yellowgreen;
-  padding-left: 20px;
-  display: flex;
   height: 100%;
-  border-radius: 0 0 0 15px;
+  left: 0;
+  z-index: 10;
 }
 
 .nav {
+  position: sticky;
+  padding-left: 20px;
   top: 10%;
-  position: fixed;
   font-weight: 600;
   font-size: large;
   display: flex;
@@ -46,7 +47,9 @@
 }
 
 .treeLogo {
-  margin-left: -10px;
-  position: fixed;
-  bottom: -10px;
+  position: sticky;
+  height: 345px;
+  width: 180px;
+  top: 600px;
+  padding-left: 10px;
 }

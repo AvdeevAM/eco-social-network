@@ -1,8 +1,21 @@
 import s from "./Button.module.css";
+import cn from "classnames";
 
-export const createButton = (className = s.defaultButton, text, type, { ...props }) => {   
-return (
-    <div className={className}>
+export const createButton = (
+  className = undefined,
+  text,
+  type,
+  { ...props }
+) => {
+  return (
+    <div
+      className={cn(
+        {
+          [className]: className !== undefined,
+        },
+        s.defaultButton
+      )}
+    >
       <button type={type} {...props}>
         {text}
       </button>

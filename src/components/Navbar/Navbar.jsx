@@ -77,7 +77,6 @@ const Navbar = (props) => {
         </div>
       </nav>
       <img className={s.treeLogo} src={treeLogo} alt="" />
-
     </div>
   );
 };

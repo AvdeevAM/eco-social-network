@@ -1,4 +1,5 @@
 import { profileAPI } from "../api/api";
+import { getAuthUserData } from "./authReducer";
 
 const ADD_POST = "profile/ADD_POST";
 const SET_USER_PROFILE = "profile/SET_USER_PROFILE";
@@ -87,6 +88,7 @@ export const savePhoto = (file) => async (dispatch) => {
   let response = await profileAPI.savePhoto(file);
   if (response.data.resultCode === 0) {
     dispatch(savePhotoSuccess(response.data.data.photos));
+    dispatch(getAuthUserData());
   }
 };
 export const saveData = (profile, setSubmitting, setStatus) => {
@@ -98,7 +100,6 @@ export const saveData = (profile, setSubmitting, setStatus) => {
     } else {
       setStatus(response.data.messages);
       console.log(response.data.messages);
-      // return Promise.reject(response.data.messages[0]);
     }
     setSubmitting(false);
     return response.data;
