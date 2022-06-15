@@ -28,7 +28,7 @@ export const createField = (
   return (
     <div>
       <Field
-        class={s.defaultField}
+        className={s.defaultField}
         component={component}
         name={name}
         placeholder={placeholder}

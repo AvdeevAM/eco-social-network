@@ -51,6 +51,7 @@ const ProfileInfo = (props) => {
         </div>
       )}
       <ProfileStatusWithHooK
+      isOwner={props.isOwner}
         status={props.status}
         updateStatus={props.updateStatus}
       />

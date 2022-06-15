@@ -1,10 +1,13 @@
+import { NavLink } from "react-router-dom";
 import { createButton } from "../common/Button/Button";
-import s from "./Settings.module.css";
+import s from "./HeaderSettings.module.css";
 
 const Settings = (props) => {
   return (
     <div className={s.settings}>
-      <h4>{props.fullName}</h4>
+      <NavLink to="/profile">
+        <h4>{props.fullName}</h4>
+      </NavLink>
       <div className={s.settingsInfoWrapper}>
         nickname: {props.login} <br />
         e-mail: {props.email}

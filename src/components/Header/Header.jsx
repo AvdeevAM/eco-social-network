@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import s from "./Header.module.css";
 import smallDefaultAvatar from "./../../assets/images/default_avatar_small.png";
-import Settings from "./Settings";
+import HeaderSettings from "./HeaderSettings";
 import { createButton } from "../common/Button/Button";
 
 const Header = (props) => {
@@ -38,7 +38,7 @@ const Header = (props) => {
             alt="avatar"
           />
           {settingsMode && (
-            <Settings
+            <HeaderSettings
               fullName={props.fullName}
               login={props.login}
               email={props.email}

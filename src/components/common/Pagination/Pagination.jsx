@@ -1,6 +1,8 @@
 import s from "./Pagination.module.css";
 import React, { useState } from "react";
 import cn from "classnames";
+import arrow from "./../../../assets/icons/arrow.svg";
+import doubleArrow from "./../../../assets/icons/double-arrow.svg";
 
 const Pagination = ({
   totalItemsCount,
@@ -24,24 +26,26 @@ const Pagination = ({
   return (
     <div className={s.pagination}>
       {portionNumber > 1 && (
-        <button
+        <div
+          className={s.doubleArrowLeft}
           onClick={() => {
             setPortionNumber(1);
             onPageChanged(1);
           }}
         >
-          FIRST
-        </button>
+          <img src={doubleArrow} alt="" />
+        </div>
       )}
       {portionNumber > 1 && (
-        <button
+        <div
+          className={s.arrowLeft}
           onClick={() => {
             setPortionNumber(portionNumber - 1);
             onPageChanged((portionNumber - 1) * portionSize);
           }}
         >
-          PREV
-        </button>
+          <img src={arrow} alt="" />
+        </div>
       )}
       {pages
         .filter(
@@ -66,24 +70,26 @@ const Pagination = ({
           );
         })}
       {portionCount > portionNumber && (
-        <button
+        <div
+          className={s.arrowRight}
           onClick={() => {
             setPortionNumber(portionNumber + 1);
             onPageChanged(portionNumber * portionSize + 1);
           }}
         >
-          NEXT
-        </button>
+          <img src={arrow} alt="" />
+        </div>
       )}
       {portionCount !== portionNumber && (
-        <button
+        <div
+          className={s.doubleArrowRight}
           onClick={() => {
             setPortionNumber(Math.ceil(pagesCount / portionSize));
             onPageChanged(pagesCount);
           }}
         >
-          LAST
-        </button>
+          <img src={doubleArrow} alt="" />
+        </div>
       )}
     </div>
   );

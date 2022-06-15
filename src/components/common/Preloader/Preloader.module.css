@@ -1,0 +1,12 @@
+.preloader {
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 5%;
+    left: 47%;
+    z-index: 100;
+}
+
+.preloader img {
+    width: 300px;
+}

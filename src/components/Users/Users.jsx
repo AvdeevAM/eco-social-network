@@ -1,6 +1,7 @@
 import React from "react";
 import Pagination from "../common/Pagination/Pagination";
 import User from "./User";
+import s from "./Users.module.css";
 
 const Users = ({
   totalUsersCount,
@@ -10,22 +11,24 @@ const Users = ({
   ...props
 }) => {
   return (
-    <div>
+    <div className={s.content}>
       <Pagination
         totalItemsCount={totalUsersCount}
         pageSize={pageSize}
         currentPage={currentPage}
         onPageChanged={onPageChanged}
       />
-      {props.users.map((u) => (
-        <User
-          user={u}
-          followingInProgress={props.followingInProgress}
-          follow={props.follow}
-          unfollow={props.unfollow}
-          key={u.id}
-        />
-      ))}
+      <div className={s.userList}>
+        {props.users.map((u) => (
+          <User
+            user={u}
+            followingInProgress={props.followingInProgress}
+            follow={props.follow}
+            unfollow={props.unfollow}
+            key={u.id}
+          />
+        ))}
+      </div>
     </div>
   );
 };
