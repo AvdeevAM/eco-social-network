@@ -21,13 +21,16 @@
   height: 60px;
   align-items: center;
   z-index: 1;
+  cursor: pointer;
 }
 
 .loginAvatar {
   width: 60px;
   height: 60px;
-  top: 0;
+  top: -3px;
   align-self: center;
   position: absolute;
   z-index: 0;
+  border-radius: 50%;
+  border: 3px solid aliceblue;
 }

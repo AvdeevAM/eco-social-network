@@ -1,9 +1,82 @@
 .descriptionBlock {
-    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.descriptionBlockAvatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 25px 20px 25px;
+    height: fit-content;
+    min-width: 300px;
+    width: fit-content;
+    border-radius: 20px;
+    background-color: aliceblue;
+}
+
+.descriptionBlockAvatar div {
+    padding: 5px;
+}
+
+.descriptionBlockAvatar h2 {
+    margin: 0;
+}
+
+.descriptionBlockInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 500px;
+}
+
+.descriptionBlockStatus {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    margin-bottom: 20px;
+}
+
+.descriptionBlockAbout>div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    min-height: 340px;
+    max-width: 500px;
+    height: fit-content;
+    padding: 5px 15px;
+    border-radius: 15px;
+    background-color: aliceblue;
+}
+
+.descriptionBlockAbout button {
+    background-color: aliceblue;
+    box-shadow: 1px 1px 3px black;
+    color: black;
+    border: 1.5px solid #1e8449;
+    width: 120px;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+}
+
+.profileInfoDataButton {
+    width: fit-content;
 }
 
 .contacts {
-    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.contacts>b {
+    margin-left: -10px;
 }
 
 .lookingForAJob>img {
@@ -14,16 +87,11 @@
 }
 
 .profilePhoto {
-    max-width: 200px;
-}
-
-.error {
-    color: red;
-    font-weight: 700;
-    font-size: 12px;
+    max-width: 300px;
 }
 
 .imageUploadWrapper {
+    margin-top: 10px;
     width: 130px;
     height: 33px;
     position: relative;
@@ -31,7 +99,7 @@
 
 .imageUploadInput {
     position: absolute;
-    height: 100%;
+    height: 80%;
     width: 100%;
     opacity: 0;
     z-index: 1;
@@ -81,12 +149,4 @@
 
 .imageUploadWrapper:hover label {
     box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-}
-
-.form input {
-    width: 300px;
-}
-
-.form .lookingForAJob input {
-    width: 18px;
 }

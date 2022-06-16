@@ -8,7 +8,13 @@ import { createButton } from "../../common/Button/Button";
 
 const MyPosts = (props) => {
   let postsElements = props.posts.map((p) => (
-    <Post message={p.message} likesCount={p.likesCount} key={p.id} />
+    <Post
+      message={p.message}
+      likesCount={p.likesCount}
+      key={p.id}
+      authorName={p.authorName}
+      authorizedUserPhoto={props.authorizedUserPhoto}
+    />
   ));
 
   const addPost = (values, { resetForm }) => {
@@ -23,13 +29,13 @@ const MyPosts = (props) => {
   const postSchema = yup.object().shape({
     newPostText: yup
       .string()
-      .max(10, "Message is too long")
+      .max(15, "Message is too long")
       .required("Type text to send message"),
   });
 
   return (
     <div className={s.postsBlock}>
-      <h3>My posts</h3>
+      <h4>my activity...</h4>
       <div>
         <FormikMyPosts addPost={addPost} postSchema={postSchema} />
       </div>
@@ -47,12 +53,13 @@ const FormikMyPosts = (props) => {
     >
       {({ handleSubmit, isValid, dirty, touched, errors }) => (
         <Form onSubmit={handleSubmit} className={s.newMessage}>
-          {createField("textarea", "newPostText", "Type new post")}
+          <div className={s.newMessageBg}></div>
+          {createField("textarea", "newPostText", "write your thoughts here")}
           {touched.newPostText && errors.newPostText && (
             <p className={s.error}>{errors.newPostText}</p>
           )}
           {createButton(undefined, "Add post", "submit", {
-            disabled: !isValid && !dirty && touched.newMessageBody,
+            disabled: !isValid && !dirty,
           })}
         </Form>
       )}

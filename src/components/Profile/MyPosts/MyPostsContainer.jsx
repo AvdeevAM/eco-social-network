@@ -7,6 +7,7 @@ import MyPosts from "./MyPosts";
 const mapStateToProps = (state) => {
   return {
     posts: state.profilePage.posts,
+    authorizedUserPhoto: state.auth.photo,
   };
 };
 

@@ -29,45 +29,53 @@ const ProfileInfo = (props) => {
   };
   return (
     <div className={s.descriptionBlock}>
-      <div>
-        <h2>{props.profile.fullName}</h2>
+      <div className={s.descriptionBlockAvatar}>
+        <div>
+          <h2>{props.profile.fullName}</h2>
+        </div>
+        <img
+          className={s.profilePhoto}
+          src={props.profile.photos.large || userPhoto}
+          alt=""
+        />
+        {props.isOwner && (
+          <div className={s.imageUploadWrapper}>
+            <label className={s.imageUploadLabel} htmlFor="imageUpload">
+              Change picture
+            </label>
+            <input
+              className={s.imageUploadInput}
+              type="file"
+              name="imageUpload"
+              onChange={onPhotoSelected}
+            />
+          </div>
+        )}
       </div>
-      <img
-        className={s.profilePhoto}
-        src={props.profile.photos.large || userPhoto}
-        alt=""
-      />
-      {props.isOwner && (
-        <div className={s.imageUploadWrapper}>
-          <label className={s.imageUploadLabel} htmlFor="imageUpload">
-            Change picture
-          </label>
-          <input
-            className={s.imageUploadInput}
-            type="file"
-            name="imageUpload"
-            onChange={onPhotoSelected}
+      <div className={s.descriptionBlockInfo}>
+        <div className={s.descriptionBlockStatus}>
+          <ProfileStatusWithHooK
+            isOwner={props.isOwner}
+            status={props.status}
+            updateStatus={props.updateStatus}
           />
         </div>
-      )}
-      <ProfileStatusWithHooK
-      isOwner={props.isOwner}
-        status={props.status}
-        updateStatus={props.updateStatus}
-      />
-      {editMode ? (
-        <ProfileInfoDataForm
-          {...props}
-          saveProfileInfoData={saveProfileInfoData}
-        />
-      ) : (
-        <ProfileInfoData
-          {...props}
-          switchOnEditMode={() => {
-            setEditMode(true);
-          }}
-        />
-      )}
+        <div className={s.descriptionBlockAbout}>
+          {editMode ? (
+            <ProfileInfoDataForm
+              {...props}
+              saveProfileInfoData={saveProfileInfoData}
+            />
+          ) : (
+            <ProfileInfoData
+              {...props}
+              switchOnEditMode={() => {
+                setEditMode(true);
+              }}
+            />
+          )}
+        </div>
+      </div>
     </div>
   );
 };
@@ -75,15 +83,17 @@ const ProfileInfo = (props) => {
 const ProfileInfoData = (props) => {
   return (
     <div>
-      {props.isOwner &&
-        createButton(undefined, "Edit", "button", {
-          onClick: props.switchOnEditMode,
-        })}
+      <div className={s.profileInfoDataButton}>
+        {props.isOwner &&
+          createButton(undefined, "Edit profile", "button", {
+            onClick: props.switchOnEditMode,
+          })}
+      </div>
       <div className={s.aboutMe}>
         <b>About me</b>: {props.profile.aboutMe}
       </div>
-      <b>Contacts</b>:
       <div className={s.contacts}>
+      <b>Contacts</b>
         {Object.keys(props.profile.contacts).map((key) => {
           return (
             <Contact

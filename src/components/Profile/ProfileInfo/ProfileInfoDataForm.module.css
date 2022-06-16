@@ -1,3 +1,37 @@
-input {
-    background-color: red;
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 340px;
+    max-width: 500px;
+    height: fit-content;
+    padding: 5px 15px;
+    border-radius: 15px;
+    background-color: aliceblue;
+}
+
+.profileInfoDataFormButton {
+    margin-top: 5px;
+    width: fit-content;
+}
+
+.form input {
+    width: 300px;
+    border: 0px;
+}
+
+.form .lookingForAJob input {
+    width: 18px;
+}
+
+.form {
+    min-width: 400px;
+    width: 400px;
+}
+
+.error {
+    color: red;
+    font-weight: 700;
+    font-size: 12px;
 }

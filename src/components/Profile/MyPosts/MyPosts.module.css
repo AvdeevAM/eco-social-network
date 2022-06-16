@@ -1,7 +1,55 @@
 .postsBlock {
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0 20px 0;
+    padding: 0;
+    width: 500px;
+    background-color: aliceblue;
+    border-radius: 20px;
+}
+
+.postsBlock>div,
+.postsBlock>h4 {
+    padding-left: 20px;
+}
+
+.postsBlock>h4 {
+    padding-top: 5px;
+    margin-top: 5px;
+    height: 10px;
 }
 
 .posts {
-    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.newMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: fit-content;
+    min-height: fit-content;
+    height: 140px;
+    padding: 0px 20px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.newMessage textarea {
+    padding: 45px 0px 0 5px;
+    width: 240px;
+    height: 70px;
+}
+
+.newMessageBg {
+    width: 240px;
+    height: 125px;
+    top: 20px;
+    left: 40px;
+    position: absolute;
+    background-color: rgba(202, 215, 231, 0.849);
+    z-index: -1;
 }

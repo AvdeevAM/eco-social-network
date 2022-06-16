@@ -10,10 +10,49 @@ const SAVE_PHOTO_SUCCESS = "profile/SAVE_PHOTO_SUCCESS";
 let initialState = {
   profile: null,
   posts: [
-    { id: 1, message: "Hi, how are you?", likesCount: "15" },
-    { id: 2, message: "It's my first post", likesCount: "20" },
-    { id: 3, message: "Bla", likesCount: "11" },
-    { id: 4, message: "Dada", likesCount: "2" },
+    {
+      id: 1,
+      message: "It's my first post",
+      authorName: "Alexander",
+      likesCount: "15",
+    },
+    {
+      id: 2,
+      message: "Hi, how are you?",
+      authorName: "Alexander",
+      likesCount: "20",
+    },
+    {
+      id: 3,
+      message: "Bla bla bla",
+      authorName: "Alexander",
+      likesCount: "11",
+    },
+    {
+      id: 4,
+      message: "Is somebody reading it right now?",
+      authorName: "Alexander",
+      likesCount: "2",
+    },
+    {
+      id: 5,
+      message: "Very big post incoming...",
+      authorName: "Alexander",
+      likesCount: "3",
+    },
+    {
+      id: 6,
+      message:
+        "I'm a big boy -------------------------------------------------------------------------------------------------------------",
+      authorName: "Alexander",
+      likesCount: "20",
+    },
+    {
+      id: 7,
+      message: "Ok, u r pretty far from start",
+      authorName: "Alexander",
+      likesCount: "20",
+    },
   ],
   status: "",
 };
@@ -24,6 +63,7 @@ const profileReducer = (state = initialState, action) => {
       let newPost = {
         id: state.posts.length + 1,
         message: action.text,
+        authorName: "Alexander",
         likesCount: 0,
       };
       return {

@@ -1,6 +1,8 @@
 import React from "react";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
+import FollowingUsers from "./ProfileInfo/FollowingUsers";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import s from "./Profile.module.css";
 
 const Profile = (props) => {
   return (
@@ -13,7 +15,10 @@ const Profile = (props) => {
         status={props.status}
         updateStatus={props.updateStatus}
       />
-      <MyPostsContainer />
+      <div className={s.profilePostsAndFollowingUsers}>
+        <FollowingUsers />
+        <MyPostsContainer />
+      </div>
     </div>
   );
 };

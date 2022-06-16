@@ -7,11 +7,11 @@
     "n c";
   grid-template-rows: 70px 1fr;
   grid-template-columns: 2fr 10fr;
-  grid-gap: 3px;
+  grid-gap: 7px;
 }
 
 .app-wrapper-content {
   min-height: calc(100vh - 73px);
   grid-area: c;
-  background-color: rgba(0, 110, 255, 0.747);
+  background-color: rgba(202, 215, 231, 0.849);
 }

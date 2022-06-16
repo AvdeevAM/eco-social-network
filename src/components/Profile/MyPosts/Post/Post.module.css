@@ -1,9 +1,78 @@
 .item {
-  color: greenyellow;
+  padding: 10px 0px 10px 10px;
+  margin: 15px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 70px;
+  height: fit-content;
+  width: 420px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  background-color: rgb(255, 245, 245);
+  color: black;
+
 }
 
 .item img {
   width: 50px;
   height: 50px;
   border-radius: 30px;
+}
+
+.postAuthor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.postTextAreaWrapper {
+  margin-left: 10px;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.postTextArea {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  width: 99.6%;
+  border: 0.5px solid black;
+  border-right: hidden;
+  border-radius: 10px 0 0 10px;
+  background-color: aliceblue;
+}
+
+.postTextArea>span {
+  padding-left: 10px;
+}
+
+.likeArea {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 25px;
+  width: 90px;
+}
+
+.likeArea span {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 25px;
+  width: fit-content;
+}
+
+.likeArea img {
+  margin-left: 3px;
+  width: 18px;
+  height: 18px;
 }

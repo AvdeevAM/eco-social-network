@@ -1,6 +1,6 @@
 import { Formik, Form } from "formik";
 import * as yup from "yup";
-import s from "./ProfileInfo.module.css";
+import s from "./ProfileInfoDataForm.module.css";
 import { createField } from "../../../utils/FormControls";
 import { createButton } from "../../common/Button/Button";
 
@@ -42,7 +42,9 @@ const ProfileInfoDataForm = (props) => {
           autoComplete="off"
         >
           {formik.status}
-          {createButton(undefined, "Save", "submit", { props: null })}
+          <div className={s.profileInfoDataFormButton}>
+            {createButton(undefined, "Save", "submit", { props: null })}
+          </div>
           <div className={s.fullName}>
             <b>Full name</b>: {createField("input", "fullName", "Full name")}
             {formik.errors.fullName && (
@@ -55,8 +57,9 @@ const ProfileInfoDataForm = (props) => {
               <p className={s.error}>{formik.errors.aboutMe}</p>
             )}
           </div>
-          <b>Contacts</b>:
+        
           <div className={s.contacts}>
+          <b>Contacts</b>
             {Object.keys(props.profile.contacts).map((key) => {
               return (
                 <div key={key}>
