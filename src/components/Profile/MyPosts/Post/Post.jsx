@@ -1,8 +1,13 @@
 import React from "react";
 import s from "./Post.module.css";
 import heart from "./../../../../assets/icons/heart.svg";
+import { createButton } from "../../../common/Button/Button";
 
 const Post = (props) => {
+  const likePost = () => {
+    props.incrementLikes(props.postId);
+  };
+
   return (
     <div className={s.item}>
       <div className={s.postAuthor}>
@@ -14,9 +19,10 @@ const Post = (props) => {
           <span>{props.message}</span>
         </div>
         <div className={s.likeArea}>
-          <button>like</button>
+          {createButton(s.likeButton, "Like", "button", {
+            onClick: likePost,
+          })}
           <span>
-            
             <img src={heart} alt="" />
             {props.likesCount}
           </span>

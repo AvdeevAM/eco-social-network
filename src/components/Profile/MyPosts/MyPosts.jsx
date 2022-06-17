@@ -12,8 +12,10 @@ const MyPosts = (props) => {
       message={p.message}
       likesCount={p.likesCount}
       key={p.id}
+      postId={p.id}
       authorName={p.authorName}
       authorizedUserPhoto={props.authorizedUserPhoto}
+      incrementLikes={props.incrementLikes}
     />
   ));
 
@@ -35,7 +37,9 @@ const MyPosts = (props) => {
 
   return (
     <div className={s.postsBlock}>
-      <h4>my activity...</h4>
+      <div className={s.feedTitle}>
+        <h4>my feed</h4>
+      </div>
       <div>
         <FormikMyPosts addPost={addPost} postSchema={postSchema} />
       </div>

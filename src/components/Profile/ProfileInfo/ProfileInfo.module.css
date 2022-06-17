@@ -41,6 +41,7 @@
     border-radius: 10px;
     background-color: aliceblue;
     margin-bottom: 20px;
+    min-width: fit-content;
 }
 
 .descriptionBlockAbout>div {
@@ -149,4 +150,9 @@
 
 .imageUploadWrapper:hover label {
     box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
+.statusInput {
+    height: fit-content;
+    min-width: 300px;
 }

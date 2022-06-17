@@ -6,6 +6,7 @@ const SET_USER_PROFILE = "profile/SET_USER_PROFILE";
 const SET_STATUS = "profile/SET_STATUS";
 const DELETE_POST = "profile/DELETE_POST";
 const SAVE_PHOTO_SUCCESS = "profile/SAVE_PHOTO_SUCCESS";
+const INCREMENT_LIKES = "profile/INCREMENT_LIKES";
 
 let initialState = {
   profile: null,
@@ -54,6 +55,20 @@ let initialState = {
       likesCount: "20",
     },
   ],
+  followed: [
+    { name: "rafaelitos17", id: 24495, photo: null },
+    { name: "Sorit", id: 24494, photo: null },
+    { name: "Freyja", id: 24493, photo: null },
+    { name: "6e3LaD", id: 24477, photo: null },
+    { name: "KemtaTam2000", id: 24278, photo: null },
+    { name: "AnnM", id: 24276, photo: null },
+    { name: "mrte", id: 24274, photo: null },
+    { name: "Ilya178", id: 24139, photo: null },
+    { name: "Questra", id: 24085, photo: null },
+    { name: "234234er324", id: 24081, photo: null },
+    { name: "zidan671", id: 24080, photo: null },
+    { name: "Andrey132", id: 24033, photo: null },
+  ],
   status: "",
 };
 
@@ -85,6 +100,12 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         posts: state.posts.filter((p) => p.id !== action.postId),
       };
+    case INCREMENT_LIKES:
+      state.posts.find((p) => p.id === action.postId).likesCount++;
+      return {
+        ...state,
+        posts: [...state.posts],
+      };
     case SAVE_PHOTO_SUCCESS:
       return {
         ...state,
@@ -95,7 +116,7 @@ const profileReducer = (state = initialState, action) => {
   }
 };
 
-export const addPostActionCreator = (text) => ({ type: ADD_POST, text });
+export const addPost = (text) => ({ type: ADD_POST, text });
 export const setUserProfile = (profile) => ({
   type: SET_USER_PROFILE,
   profile,
@@ -108,6 +129,10 @@ export const deletePost = (postId) => ({ type: DELETE_POST, postId });
 export const savePhotoSuccess = (photos) => ({
   type: SAVE_PHOTO_SUCCESS,
   photos,
+});
+export const incrementLikes = (postId) => ({
+  type: INCREMENT_LIKES,
+  postId,
 });
 
 export const getUserProfile = (userId) => async (dispatch) => {

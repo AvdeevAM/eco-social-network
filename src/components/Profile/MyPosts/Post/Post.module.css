@@ -12,13 +12,9 @@
   border-radius: 5px;
   background-color: rgb(255, 245, 245);
   color: black;
-
-}
-
-.item img {
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
+  -webkit-box-shadow: 2px 2px 1.5px black;
+  -moz-box-shadow: 2px 2px 1.5px black;
+  box-shadow: 2px 2px 1.5px black;
 }
 
 .postAuthor {
@@ -26,6 +22,14 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  font-weight: 600;
+}
+
+.postAuthor>img {
+  width: 56px;
+  height: 56px;
+  border: 2px solid black;
+  border-radius: 30px;
 }
 
 .postTextAreaWrapper {
@@ -75,4 +79,31 @@
   margin-left: 3px;
   width: 18px;
   height: 18px;
+}
+
+.likeButton>button {
+  width: 60px;
+  height: 25px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(189, 255, 255);
+  color: black;
+  -webkit-box-shadow: 0 0 2px 1px black;
+  -moz-box-shadow: 0 0 2px 1px black;
+  box-shadow: 0 0 2px 1px black;
+}
+
+.likeButton>button:hover {
+  background-color: #35da15;
+  border: 0.5px solid black;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.likeButton>button:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 6px 12px;
 }

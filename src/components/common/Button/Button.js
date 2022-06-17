@@ -4,8 +4,8 @@ import cn from "classnames";
 export const createButton = (
   className = undefined,
   text,
-  type,
-  { ...props }
+  type = "button",
+  { ...props } = {}
 ) => {
   return (
     <div
