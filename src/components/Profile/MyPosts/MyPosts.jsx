@@ -38,7 +38,7 @@ const MyPosts = (props) => {
   return (
     <div className={s.postsBlock}>
       <div className={s.feedTitle}>
-        <h4>my feed</h4>
+        <h4>My feed</h4>
       </div>
       <div>
         <FormikMyPosts addPost={addPost} postSchema={postSchema} />

@@ -1,0 +1,17 @@
+.dialog {
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px dashed black;
+    text-decoration: none;
+    color: black;
+}
+
+.dialog.active {
+    text-decoration: underline;
+}
+
+.dialog>img {
+    padding-right: 10px;
+    width: 40px;
+}

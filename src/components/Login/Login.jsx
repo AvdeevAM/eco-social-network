@@ -40,7 +40,7 @@ const Login = (props) => {
   }
 
   return (
-    <div>
+    <div className={s.loginBlock}>
       <h3>LOGIN</h3>
       <FormikLogin
         submitLogin={submitLogin}
@@ -62,7 +62,7 @@ const FormikLogin = (props) => {
       validationSchema={props.loginSchema}
     >
       {(formik) => (
-        <Form onSubmit={formik.handleSubmit}>
+        <Form className={s.loginForm} onSubmit={formik.handleSubmit}>
           {formik.status}
           <div>
             {createField("input", "email", "Email")}

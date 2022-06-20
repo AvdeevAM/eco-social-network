@@ -1,14 +1,13 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { WithAuthRedirect } from "../../HOC/WithAuthRedirect";
-import {
-  sendMessageActionCreator,
-} from "../../redux/dialogsReducer";
+import { sendMessageActionCreator } from "../../redux/dialogsReducer";
 import Dialogs from "./Dialogs";
 
 const mapStateToProps = (state) => {
   return {
     messagesPage: state.dialogsPage,
+    authPhoto: state.auth.photo,
   };
 };
 

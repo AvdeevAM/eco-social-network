@@ -24,11 +24,9 @@ const Header = (props) => {
 
   return (
     <header className={s.header}>
-      <img
-        className={s.headerLogo}
-        src="https://www.logodesign.net/images/nature-logo.png"
-        alt=""
-      />
+      <div>
+        <h3>ECOsocial.net</h3>
+      </div>
       {props.isAuth ? (
         <div className={s.loginBlock} onClick={toggleEditMode} autoFocus={true}>
           <img

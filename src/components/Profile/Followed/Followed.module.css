@@ -10,6 +10,7 @@
     border-radius: 15px;
     padding: 5px 5px 10px 5px;
     box-shadow: 0 0 2px 1px black;
+    grid-area: f;
 }
 .title {
     padding-bottom: 3px;

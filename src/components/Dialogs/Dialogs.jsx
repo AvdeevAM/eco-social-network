@@ -11,7 +11,7 @@ const Dialogs = (props) => {
     <DialogItem name={d.name} id={d.id} key={d.id} />
   ));
   let messagesElements = props.messagesPage.messages.map((m) => (
-    <Message message={m} key={m.id} />
+    <Message message={m} key={m.id} authPhoto={props.authPhoto} />
   ));
 
   let addNewMessage = (values, { resetForm }) => {
@@ -32,13 +32,17 @@ const Dialogs = (props) => {
 
   return (
     <div className={s.dialogs}>
-      <div className={s.dialogsItems}>{dialogsElements}</div>
-      <div className={s.messages}>
-        {messagesElements}
-        <FormikDialogs
-          addNewMessage={addNewMessage}
-          messageSchema={messageSchema}
-        />
+      <div className={s.dialogsItemsWrapper}>
+        <div className={s.dialogsItems}>{dialogsElements}</div>
+      </div>
+      <div className={s.messagesBlock}>
+        <div className={s.dialog}>{messagesElements}</div>
+        <div>
+          <FormikDialogs
+            addNewMessage={addNewMessage}
+            messageSchema={messageSchema}
+          />
+        </div>
       </div>
     </div>
   );

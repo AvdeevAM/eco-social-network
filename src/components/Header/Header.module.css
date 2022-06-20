@@ -1,6 +1,6 @@
 .header {
   grid-area: h;
-  background-color: rebeccapurple;
+  background-image: url("./../../assets/images/header-bg.png");
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,6 +10,9 @@
   z-index: 11;
 }
 
+.header>div>h3 {
+  margin-left: 15px;
+}
 .headerLogo {
   width: 40px;
 }

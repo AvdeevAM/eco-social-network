@@ -6,7 +6,7 @@ import Followed from "./Followed/Followed";
 
 const Profile = (props) => {
   return (
-    <div>
+    <div className={s.profile}>
       <ProfileInfo
         saveData={props.saveData}
         isOwner={props.isOwner}
@@ -14,13 +14,12 @@ const Profile = (props) => {
         profile={props.profile}
         status={props.status}
         updateStatus={props.updateStatus}
+        followed={props.followed}
       />
-      {props.isOwner && (
-        <div className={s.profilePostsAndFollowedUsers}>
-          <Followed followed={props.followed} />
-          <MyPostsContainer />
-        </div>
-      )}
+      {props.isOwner && <Followed followed={props.followed} />}
+      {props.isOwner && <MyPostsContainer />}
+      {/* <Followed followed={props.followed} />
+      <MyPostsContainer /> */}
     </div>
   );
 };

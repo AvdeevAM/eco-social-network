@@ -51,6 +51,11 @@ const ProfileInfo = (props) => {
             />
           </div>
         )}
+        {props.isOwner && (
+          <div className={s.followers}>
+            <p>{`followers: ${props.followed.length}`}</p>
+          </div>
+        )}
       </div>
       <div className={s.descriptionBlockInfo}>
         <div className={s.descriptionBlockStatus}>
@@ -93,7 +98,7 @@ const ProfileInfoData = (props) => {
         <b>About me</b>: {props.profile.aboutMe}
       </div>
       <div className={s.contacts}>
-      <b>Contacts</b>
+        <b>Contacts</b>
         {Object.keys(props.profile.contacts).map((key) => {
           return (
             <Contact

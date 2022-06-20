@@ -1,11 +1,14 @@
 .descriptionBlock {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 15px;
+    width: 100%;
+    grid-area: i;
 }
 
 .descriptionBlockAvatar {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,6 +27,26 @@
 
 .descriptionBlockAvatar h2 {
     margin: 0;
+}
+
+.followers {
+    margin: 0;
+    position: absolute;
+    width: fit-content;
+    height: 10px;
+    bottom: 15px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.followers p {
+    padding: 2px 4px;
+    margin: 0;
+}
+
+.followers p:hover {
+    border: 1px solid #1e8449;
+    border-radius: 5px;
 }
 
 .descriptionBlockInfo {
@@ -155,4 +178,11 @@
 .statusInput {
     height: fit-content;
     min-width: 300px;
+}
+
+@media (max-width: 640px) {
+    .descriptionBlock {
+        flex-direction: column;
+        align-items: center;
+    }
 }

@@ -1,5 +1,20 @@
-.profilePostsAndFollowedUsers {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
+.profile {
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+        "i i"
+        "f p";
+    grid-gap: 20px;
+    grid-template-rows: 450px 1fr;
+    grid-template-columns: 1fr 1.5fr;
+    justify-items: center;
+}
+
+@media (max-width: 640px) {
+    .profile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
 }
