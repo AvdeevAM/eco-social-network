@@ -18,8 +18,6 @@ const Profile = (props) => {
       />
       {props.isOwner && <Followed followed={props.followed} />}
       {props.isOwner && <MyPostsContainer />}
-      {/* <Followed followed={props.followed} />
-      <MyPostsContainer /> */}
     </div>
   );
 };

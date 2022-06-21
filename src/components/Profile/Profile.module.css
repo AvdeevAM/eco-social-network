@@ -5,12 +5,12 @@
         "i i"
         "f p";
     grid-gap: 20px;
-    grid-template-rows: 450px 1fr;
+    grid-template-rows: min-content;
     grid-template-columns: 1fr 1.5fr;
     justify-items: center;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1200px) {
     .profile {
         display: flex;
         flex-direction: column;

@@ -85,7 +85,7 @@ const FormikLogin = (props) => {
               createField("input", "captcha", "Enter symbols from image")}
             <div>
               {createButton(undefined, "Log in", "submit", {
-                disabled: !formik.isValid && !formik.dirty,
+                disabled: !(formik.isValid && formik.dirty),
               })}
             </div>
           </div>

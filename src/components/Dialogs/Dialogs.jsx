@@ -26,8 +26,8 @@ const Dialogs = (props) => {
   const messageSchema = yup.object().shape({
     newMessageBody: yup
       .string()
-      .max(15, "Message is too long")
-      .required("Type text to send message"),
+      .min(1, "Type text to send message")
+      .max(15, "caution: your message is too long to be sent"),
   });
 
   return (
@@ -63,15 +63,13 @@ const FormikDialogs = (props) => {
               name="newMessageBody"
               placeholder="Enter your message"
             />
-            {touched.newMessageBody && errors.newMessageBody && (
+            {errors.newMessageBody && (
               <p className={s.error}>{errors.newMessageBody}</p>
             )}
           </div>
-          <div>
-            {createButton(undefined, "Send message", "submit", {
-              disabled: !isValid && !dirty && touched.newMessageBody,
-            })}
-          </div>
+          {createButton(null, "Send message", "submit", {
+            disabled: !(isValid && dirty),
+          })}
         </Form>
       )}
     </Formik>

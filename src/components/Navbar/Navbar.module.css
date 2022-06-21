@@ -1,10 +1,13 @@
 .navWrapper {
   position: sticky;
   grid-area: n;
-  background-color: yellowgreen;
-  height: 100%;
+  height: calc(100vh - 70px - 10px);
   left: 0;
+  top: 80px;
+  bottom: 0;
   z-index: 10;
+  box-sizing: border-box;
+  border: 2px solid green;
 }
 
 .nav {
@@ -22,12 +25,12 @@
 }
 
 .item a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
 .item a.activeLink {
-  color: gold;
+  border-bottom: 2px solid black;
 }
 
 .friends {
