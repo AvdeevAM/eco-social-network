@@ -8,7 +8,7 @@
   position: absolute;
   left: -400%;
   top: 110%;
-  background-color: aliceblue;
+  background-color: var(--primary-bg-color);
   border: 1px solid black;
   box-shadow: 0 0 10px 2px black;
   border-radius: 5px;
@@ -20,7 +20,6 @@
   align-items: flex-start;
   line-height: 22px;
   margin-left: 5%;
-  color: black;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 100;
 }
@@ -28,7 +27,7 @@
 .settings h4 {
   margin: 0% 20%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: black;
+  color: var(--primary-text-color);
   font-weight: 800;
 }
 
@@ -47,7 +46,6 @@
   width: 90px;
   margin: 0% 20%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: black;
   font-weight: 500;
 }
 

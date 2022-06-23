@@ -8,7 +8,7 @@
     height: fit-content;
     padding: 5px 15px;
     border-radius: 15px;
-    background-color: aliceblue;
+    background-color: var(--primary-bg-color);
 }
 
 .profileInfoDataFormButton {

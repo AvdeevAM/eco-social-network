@@ -19,7 +19,7 @@
     min-width: 300px;
     width: fit-content;
     border-radius: 20px;
-    background-color: aliceblue;
+    background-color: var(--primary-bg-color);
 }
 
 .descriptionBlockAvatar div {
@@ -64,7 +64,7 @@
     width: fit-content;
     padding: 5px 15px;
     border-radius: 10px;
-    background-color: aliceblue;
+    background-color: var(--primary-bg-color);
     margin-bottom: 20px;
     min-width: fit-content;
 }
@@ -79,7 +79,7 @@
     height: fit-content;
     padding: 5px 15px;
     border-radius: 15px;
-    background-color: aliceblue;
+    background-color: var(--primary-bg-color);
 }
 
 .descriptionBlockAbout button {
@@ -175,11 +175,6 @@
 
 .imageUploadWrapper:hover label {
     box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-}
-
-.statusInput {
-    height: fit-content;
-    min-width: 300px;
 }
 
 @media (max-width: 1200px) {

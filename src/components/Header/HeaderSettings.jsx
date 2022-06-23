@@ -2,7 +2,12 @@ import { NavLink } from "react-router-dom";
 import { createButton } from "../common/Button/Button";
 import s from "./HeaderSettings.module.css";
 
-const Settings = (props) => {
+const HeaderSettings = (props) => {
+  const changeTheme = () => {
+    let checker = document.querySelector("." + s.switch + " input");
+    props.toggleUITheme(checker.checked);
+  };
+
   return (
     <div className={s.settings}>
       <NavLink to="/profile">
@@ -16,7 +21,11 @@ const Settings = (props) => {
         <div className={s.switchWrapper}>
           <p>Dark theme:</p>
           <label className={s.switch}>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              checked={props.darkTheme}
+              onClick={changeTheme}
+            />
             <span className={s.slider + " " + s.round} />
           </label>
         </div>
@@ -28,4 +37,4 @@ const Settings = (props) => {
   );
 };
 
-export default Settings;
+export default HeaderSettings;

@@ -25,30 +25,40 @@ const Header = (props) => {
   return (
     <header className={s.header}>
       <div>
-        <h3>ECOsocial.net</h3>
-      </div>
-      {props.isAuth ? (
-        <div className={s.loginBlock} onClick={toggleEditMode} autoFocus={true}>
-          <img
-            id={s.loginAvatar}
-            className={s.loginAvatar}
-            src={props.photo || smallDefaultAvatar}
-            alt="avatar"
-          />
-          {settingsMode && (
-            <HeaderSettings
-              fullName={props.fullName}
-              login={props.login}
-              email={props.email}
-              logout={props.logout}
-            />
-          )}
+        <div>
+          <h3>ECOsocial.net</h3>
         </div>
-      ) : (
-        <NavLink to="/login">
-          {createButton(undefined, "Login", "button", { ...props })}
-        </NavLink>
-      )}
+        {props.isAuth ? (
+          <div
+            className={s.loginBlock}
+            onClick={toggleEditMode}
+            autoFocus={true}
+          >
+            <img
+              id={s.loginAvatar}
+              className={s.loginAvatar}
+              src={props.photo || smallDefaultAvatar}
+              alt="avatar"
+            />
+            {settingsMode && (
+              <HeaderSettings
+                darkTheme={props.darkTheme}
+                toggleUITheme={props.toggleUITheme}
+                fullName={props.fullName}
+                login={props.login}
+                email={props.email}
+                logout={props.logout}
+              />
+            )}
+          </div>
+        ) : (
+          <div>
+            <NavLink to="/login">
+              {createButton(undefined, "Login", "button", { ...props })}
+            </NavLink>
+          </div>
+        )}
+      </div>
     </header>
   );
 };

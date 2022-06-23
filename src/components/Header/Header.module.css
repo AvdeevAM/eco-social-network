@@ -1,28 +1,21 @@
 .header {
   grid-area: h;
-  background-image: url("./../../assets/images/header-bg.png");
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-image: var(--header-bg-image);
   position: fixed;
   width: 75vw;
   min-height: 70px;
   z-index: 11;
 }
 
-.header>div>h3 {
-  margin-left: 15px;
-}
-.headerLogo {
-  width: 40px;
+.header>div {
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .loginBlock {
-  margin-right: 1%;
   position: relative;
-  width: 60px;
-  height: 60px;
-  align-items: center;
   z-index: 1;
   cursor: pointer;
 }
@@ -30,9 +23,7 @@
 .loginAvatar {
   width: 60px;
   height: 60px;
-  top: -3px;
   align-self: center;
-  position: absolute;
   z-index: 0;
   border-radius: 50%;
   border: 3px solid aliceblue;

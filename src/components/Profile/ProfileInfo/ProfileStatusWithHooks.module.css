@@ -1,0 +1,5 @@
+.statusInput {
+    height: fit-content;
+    min-width: 300px;
+    background-color: var(--primary-bg-color);
+}

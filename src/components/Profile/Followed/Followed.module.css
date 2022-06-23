@@ -1,4 +1,6 @@
 .followedWrapper {
+    grid-area: f;
+    padding: 5px 5px 10px 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,11 +8,9 @@
     min-width: 260px;
     height: 240px;
     width: fit-content;
-    background-color: aliceblue;
-    border-radius: 15px;
-    padding: 5px 5px 10px 5px;
-    box-shadow: 0 0 2px 1px black;
-    grid-area: f;
+    border-radius: 15px;    
+    box-shadow: 0 0 2px 1px var(--primary-decoration-color);
+    background-color: var(--primary-bg-color);
 }
 .title {
     padding-bottom: 3px;
@@ -38,5 +38,5 @@
 .user img {
     border-radius: 50%;
     box-sizing: border-box;
-    border: 1px solid black;
+    border: 1px solid var(--primary-decoration-color);
 }

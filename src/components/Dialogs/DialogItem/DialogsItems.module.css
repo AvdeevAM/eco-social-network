@@ -4,7 +4,7 @@
     align-items: center;
     border-bottom: 1px dashed black;
     text-decoration: none;
-    color: black;
+    color: var(--primary-text-color);
 }
 
 .dialog.active {

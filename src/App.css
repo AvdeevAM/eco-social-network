@@ -1,4 +1,27 @@
+html {
+  --primary-bg-color: aliceblue;
+  --secondary-bg-color: rgba(202, 215, 231, 0.849);
+  --primary-text-color: black;
+  --primary-decoration-color: black;
+  --header-bg-image: url("./assets/images/header-bg.png");
+}
+
+.dark {
+  --primary-bg-color: rgb(34, 34, 34);
+  --secondary-bg-color: rgb(53, 53, 53);
+  --primary-text-color: aliceblue;
+  --primary-decoration-color: rgb(107, 107, 107);
+  --header-bg-image: url("./assets/images/header-bg-dark.png");
+
+}
+
+#root {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+}
+
 .app-wrapper {
+  box-sizing: border-box;
   margin: 0 auto;
   display: grid;
   width: 75vw;
@@ -8,32 +31,34 @@
   grid-template-rows: 70px 1fr;
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
+  color: var(--primary-text-color);
+  background-color: var(--primary-bg-color);
 }
 
 .app-wrapper-content {
-  min-height: calc(100vh - 80px);
   grid-area: c;
-  background-color: rgba(202, 215, 231, 0.849);
+  min-height: calc(100vh - 8rem);
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--secondary-bg-color);
 }
 
 ::-webkit-scrollbar-track {
-  border: 5px solid transparent;
-  border-radius: 5px;
+  border: 0.5rem solid transparent;
+  border-radius: 0.5rem;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 1rem;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: rgba(202, 215, 231, 0.849);
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .app-wrapper {
     width: 100vw;
   }

@@ -13,6 +13,7 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 import { WithRouter } from "./HOC/WithRouter";
 import Preloader from "./components/common/Preloader/Preloader";
+import cn from "classnames";
 
 const DialogsContainer = React.lazy(() =>
   import("./components/Dialogs/DialogsContainer")
@@ -48,8 +49,19 @@ class App extends React.Component {
     if (!this.props.initialized) {
       return <Preloader />;
     }
+
+    let root = document.getElementById("root");
+    this.props.darkTheme ?  root.classList.add("dark") : root.classList.remove("dark");
+
     return (
-      <div className="app-wrapper">
+      <div
+        className={cn(
+          {
+            ["dark"]: this.props.darkTheme === true,
+          },
+          "app-wrapper"
+        )}
+      >
         <HeaderContainer />
         <Navbar />
         <div className="app-wrapper-content">
@@ -79,6 +91,7 @@ const mapStateToProps = (state) => {
   return {
     initialized: state.app.initialized,
     captchaUrl: state.auth.captchaUrl,
+    darkTheme: state.app.darkTheme,
   };
 };
 

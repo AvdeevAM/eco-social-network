@@ -1,5 +1,8 @@
 .navWrapper {
   position: sticky;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   grid-area: n;
   height: calc(100vh - 70px - 10px);
   left: 0;
@@ -7,7 +10,7 @@
   bottom: 0;
   z-index: 10;
   box-sizing: border-box;
-  border: 2px solid green;
+  background-color: var(--secondary-bg-color);
 }
 
 .nav {
@@ -25,12 +28,12 @@
 }
 
 .item a {
-  color: black;
+  color: var(--primary-text-color);
   text-decoration: none;
 }
 
 .item a.activeLink {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid var(--primary-decoration-color);
 }
 
 .friends {
@@ -53,6 +56,6 @@
   position: sticky;
   height: 345px;
   width: 180px;
-  top: 600px;
+  bottom: 0px;
   padding-left: 10px;
 }
