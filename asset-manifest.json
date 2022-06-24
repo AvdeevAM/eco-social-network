@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/eco-social-network/static/css/main.35e25400.css",
-    "main.js": "/eco-social-network/static/js/main.0885d919.js",
+    "main.css": "/eco-social-network/static/css/main.5272e4c2.css",
+    "main.js": "/eco-social-network/static/js/main.0a730e4c.js",
     "static/css/642.0ba9178a.chunk.css": "/eco-social-network/static/css/642.0ba9178a.chunk.css",
-    "static/js/642.95340f34.chunk.js": "/eco-social-network/static/js/642.95340f34.chunk.js",
+    "static/js/642.a3bddd9e.chunk.js": "/eco-social-network/static/js/642.a3bddd9e.chunk.js",
     "static/css/142.bd0e457e.chunk.css": "/eco-social-network/static/css/142.bd0e457e.chunk.css",
-    "static/js/142.c767265a.chunk.js": "/eco-social-network/static/js/142.c767265a.chunk.js",
+    "static/js/142.588f6267.chunk.js": "/eco-social-network/static/js/142.588f6267.chunk.js",
     "static/css/950.31325e7a.chunk.css": "/eco-social-network/static/css/950.31325e7a.chunk.css",
     "static/js/950.62e0a28f.chunk.js": "/eco-social-network/static/js/950.62e0a28f.chunk.js",
     "static/media/header-bg.png": "/eco-social-network/static/media/header-bg.ad9adfb3ddc9526ca7a7.png",
@@ -19,17 +19,17 @@
     "index.html": "/eco-social-network/index.html",
     "static/media/double-arrow.svg": "/eco-social-network/static/media/double-arrow.080bbf93de2b47533a2c69a918d66d43.svg",
     "static/media/arrow.svg": "/eco-social-network/static/media/arrow.1ad5a7dee3dd34423228b50a23237514.svg",
-    "main.35e25400.css.map": "/eco-social-network/static/css/main.35e25400.css.map",
-    "main.0885d919.js.map": "/eco-social-network/static/js/main.0885d919.js.map",
+    "main.5272e4c2.css.map": "/eco-social-network/static/css/main.5272e4c2.css.map",
+    "main.0a730e4c.js.map": "/eco-social-network/static/js/main.0a730e4c.js.map",
     "642.0ba9178a.chunk.css.map": "/eco-social-network/static/css/642.0ba9178a.chunk.css.map",
-    "642.95340f34.chunk.js.map": "/eco-social-network/static/js/642.95340f34.chunk.js.map",
+    "642.a3bddd9e.chunk.js.map": "/eco-social-network/static/js/642.a3bddd9e.chunk.js.map",
     "142.bd0e457e.chunk.css.map": "/eco-social-network/static/css/142.bd0e457e.chunk.css.map",
-    "142.c767265a.chunk.js.map": "/eco-social-network/static/js/142.c767265a.chunk.js.map",
+    "142.588f6267.chunk.js.map": "/eco-social-network/static/js/142.588f6267.chunk.js.map",
     "950.31325e7a.chunk.css.map": "/eco-social-network/static/css/950.31325e7a.chunk.css.map",
     "950.62e0a28f.chunk.js.map": "/eco-social-network/static/js/950.62e0a28f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.35e25400.css",
-    "static/js/main.0885d919.js"
+    "static/css/main.5272e4c2.css",
+    "static/js/main.0a730e4c.js"
   ]
 }
