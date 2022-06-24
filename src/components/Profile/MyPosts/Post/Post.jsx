@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Post.module.css";
 import heart from "./../../../../assets/icons/heart.svg";
+import default_avatar_small from "./../../../../assets/images/default_avatar_small.png";
 import { createButton } from "../../../common/Button/Button";
 
 const Post = (props) => {
@@ -11,7 +12,7 @@ const Post = (props) => {
   return (
     <div className={s.item}>
       <div className={s.postAuthor}>
-        <img src={props.authorizedUserPhoto} alt="" />
+        <img src={props.authorizedUserPhoto || default_avatar_small} alt="" />
         {props.authorName || "anonymous"}
       </div>
       <div className={s.postTextAreaWrapper}>

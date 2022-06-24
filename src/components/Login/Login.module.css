@@ -1,15 +1,22 @@
-.loginBlock {
-    background-color: aliceblue;
-    width: 450px;
-    height: fit-content;
+.content {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin-top: -100px;
-    padding: 5px 0 15px 0;
-    border: 1px solid black ;
+}
+.content>div {
+    margin: 35px auto;
+}
+.loginBlock {
+    padding: 10px 70px 25px 70px;
+    /* margin-bottom: 50px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid var(--primary-decoration-color);
     border-radius: 10px;
+    background-color: var(--primary-bg-color);
 }
 
 .loginForm {
@@ -20,7 +27,7 @@
 }
 
 .loginForm input {
-    margin-bottom: 14px;
+    margin-bottom: 15px;
 }
 
 .error {
@@ -30,4 +37,19 @@
     color: black;
     font-weight: 700;
     font-size: 16px;
+}
+
+.loginTest {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid var(--primary-decoration-color);
+    background-color: var(--primary-bg-color);
+}
+
+.loginTest>p {
+    margin: 0;
 }

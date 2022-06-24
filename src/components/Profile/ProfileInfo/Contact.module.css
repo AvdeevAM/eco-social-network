@@ -1,0 +1,7 @@
+.contactLink,
+.contactLink:active,
+.contactLink:visited,
+.contactLink:hover {
+    color: var(--primary-text-color);
+    text-decoration: underline;
+}

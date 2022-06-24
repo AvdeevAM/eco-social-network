@@ -13,7 +13,6 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 import { WithRouter } from "./HOC/WithRouter";
 import Preloader from "./components/common/Preloader/Preloader";
-import cn from "classnames";
 
 const DialogsContainer = React.lazy(() =>
   import("./components/Dialogs/DialogsContainer")
@@ -51,17 +50,12 @@ class App extends React.Component {
     }
 
     let root = document.getElementById("root");
-    this.props.darkTheme ?  root.classList.add("dark") : root.classList.remove("dark");
+    this.props.darkTheme
+      ? root.classList.add("dark")
+      : root.classList.remove("dark");
 
     return (
-      <div
-        className={cn(
-          {
-            ["dark"]: this.props.darkTheme === true,
-          },
-          "app-wrapper"
-        )}
-      >
+      <div className={"app-wrapper"}>
         <HeaderContainer />
         <Navbar />
         <div className="app-wrapper-content">

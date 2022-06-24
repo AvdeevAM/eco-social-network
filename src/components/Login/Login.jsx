@@ -40,13 +40,20 @@ const Login = (props) => {
   }
 
   return (
-    <div className={s.loginBlock}>
-      <h3>LOGIN</h3>
-      <FormikLogin
-        submitLogin={submitLogin}
-        loginSchema={loginSchema}
-        {...props}
-      />
+    <div className={s.content}>
+      <div className={s.loginBlock}>
+        <h3>Enter your email</h3>
+        <FormikLogin
+          submitLogin={submitLogin}
+          loginSchema={loginSchema}
+          {...props}
+        />
+      </div>
+      <div className={s.loginTest}>
+        <p>Testing account:</p>
+        <p>email: free@samuraijs.com</p>
+        <p>password: free</p>
+      </div>
     </div>
   );
 };

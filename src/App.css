@@ -24,7 +24,7 @@ html {
   box-sizing: border-box;
   margin: 0 auto;
   display: grid;
-  width: 75vw;
+  width: 1200px;
   grid-template-areas:
     "h h"
     "n c";
@@ -58,8 +58,9 @@ html {
   border-radius: 1rem;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1200px) {
   .app-wrapper {
     width: 100vw;
+    grid-template-columns: 1fr 10fr;
   }
 }

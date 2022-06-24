@@ -53,9 +53,16 @@
 }
 
 .treeLogo {
+  margin: 0 auto;
   position: sticky;
   height: 345px;
   width: 180px;
   bottom: 0px;
-  padding-left: 10px;
+}
+
+@media (max-width: 640px) {
+  .treeLogo {
+    height: 138px;
+    width: 72px;
+  }
 }
