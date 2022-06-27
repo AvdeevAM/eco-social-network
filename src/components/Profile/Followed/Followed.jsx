@@ -4,15 +4,6 @@ import defaultAvatar from "./../../../assets/images/default_avatar_small.png";
 import { useNavigate } from "react-router-dom";
 
 const Followed = (props) => {
-  //   const getFollowed = async () => {
-  //     let data;
-  //     let followedList = [];
-  //     for (let i = 1; i < 20; i++) {
-  //        data = await usersAPI.getUsers(i, 100);
-  //        followedList = followedList.concat(data.items.filter((u) => u.followed === true));
-  //        console.log(followedList);
-  //     }
-
   let followedList = props.followed.map((f) => {
     return <FollowedUser key={f.id} name={f.name} photo={f.photo} id={f.id} />;
   });

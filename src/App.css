@@ -64,3 +64,13 @@ html {
     grid-template-columns: 1fr 10fr;
   }
 }
+
+@media (max-width: 640px) {
+  .app-wrapper {
+    grid-gap: 4px;
+  }
+
+  * {
+    font-size: 12px;
+  }
+}

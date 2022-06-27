@@ -12,12 +12,15 @@
     box-shadow: 0 0 2px 1px var(--primary-decoration-color);
     background-color: var(--primary-bg-color);
 }
+
 .title {
     padding-bottom: 3px;
     border-bottom: 1px solid green;
 }
+
 .followedList {
     display: grid;
+    justify-items: center;
     grid-template-columns: 3fr 3fr 3fr;
     grid-gap: 6px;
     border-radius: 10px;
@@ -39,4 +42,20 @@
     border-radius: 50%;
     box-sizing: border-box;
     border: 1px solid var(--primary-decoration-color);
+}
+
+@media (max-width: 640px) {
+    .followedWrapper {
+        padding: 0px 2px;
+        min-width: 120px;
+    }
+    .followedList {
+        grid-gap: 3px;
+        padding: 2px;
+    }
+    .user {
+   
+        min-width: 40px;
+      
+    }
 }

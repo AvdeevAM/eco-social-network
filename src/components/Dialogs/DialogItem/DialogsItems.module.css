@@ -15,3 +15,25 @@
     padding-right: 10px;
     width: 40px;
 }
+
+@media (max-width: 1200px) {
+    .dialog {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+    .dialog>img {
+        padding-right: 8px;
+        width: 30px;
+    }
+}
+
+@media (max-width: 640px) {
+    .dialog {
+        padding: 2px 4px;
+        font-size: 12px;
+    }
+    .dialog>img {
+        padding-right: 5px;
+        width: 18px;
+    }
+}

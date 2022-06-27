@@ -4,7 +4,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--secondary-bg-color);
 }
 
 .pageNumber {
@@ -42,4 +41,28 @@
 
 .arrowLeft {
     transform: rotate(180deg);
+}
+
+@media (max-width: 640px) {
+    .pagination {
+        padding: 4px;
+    }
+
+    .doubleArrowRight,
+    .doubleArrowLeft,
+    .arrowLeft,
+    .arrowRight {
+        height: 10px;
+        width: 10px;
+    }
+
+    .doubleArrowRight,
+    .doubleArrowLeft {
+        height: 16px;
+        width: 16px;
+    }
+
+    .pageNumber {
+        padding: 0.5px;
+    }
 }

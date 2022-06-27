@@ -3,3 +3,9 @@
     min-width: 300px;
     background-color: var(--primary-bg-color);
 }
+
+@media (max-width: 640px) {
+    .statusInput {
+        min-width: 100px;
+    }
+}

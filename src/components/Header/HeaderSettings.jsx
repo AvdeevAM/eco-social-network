@@ -23,7 +23,7 @@ const HeaderSettings = (props) => {
           <label className={s.switch}>
             <input
               type="checkbox"
-              checked={props.darkTheme}
+              defaultChecked={props.darkTheme}
               onClick={changeTheme}
             />
             <span className={s.slider + " " + s.round} />

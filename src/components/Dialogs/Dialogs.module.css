@@ -4,7 +4,7 @@
     gap: 0px;
     height: calc(100vh - 70px - 10px);
     width: 100%;
-    }
+}
 
 .dialogsItemsWrapper {
     margin: 15px 7.5px 15px 15px;
@@ -15,8 +15,22 @@
 .dialogsItems {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: fit-content;
+    height: calc(100vh - 70px - 10px - 15px - 45px + 1px);
+    overflow-y: scroll;
+}
+
+.dialogsItems::-webkit-scrollbar-track {
+    border: 5px solid transparent;
+    border-radius: 5px;
+}
+
+.dialogsItems::-webkit-scrollbar {
+    width: 7px;
+}
+
+.dialogsItems::-webkit-scrollbar-thumb {
+    background-color: #74b9ff;
+    border-radius: 10px;
 }
 
 .messagesBlock {
@@ -73,6 +87,7 @@
     width: fit-content;
     border-radius: 10px;
     background-color: rgb(125, 194, 255);
+    text-align: start;
 }
 
 .mineMessage>.messageItemText {
@@ -112,4 +127,105 @@
     color: var(--primary-text-color);
     font-weight: 700;
     font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+    .newMessage {
+        flex-direction: column;
+        justify-content: space-between;
+        height: 140px;
+    }
+
+    .newMessage textarea {
+        width: 230px;
+    }
+
+    .dialogsItemsWrapper {
+        margin: 15px 4px 15px 8px;
+    }
+
+    .messagesBlock {
+        margin: 15px 8px 15px 4px;
+        padding: 15px 0;
+    }
+
+    .dialog {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .messageItem>img {
+        margin: 0 8px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .messageItemText {
+        max-width: 80%;
+        padding: 4px 8px;
+        width: fit-content;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 640px) {
+    .dialogs {
+        font-size: 9px;
+    }
+
+    .dialogsItemsWrapper {
+        margin: 5px 4px 5px 8px;
+        background-color: var(--primary-bg-color);
+        border: 1px solid black;
+    }
+
+    .dialogsItems {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 70px - 35px + 1px);
+        overflow-y: scroll;
+    }
+
+    .messagesBlock {
+        margin: 5px 8px 5px 4px;
+        padding: 6px 0;
+        height: calc(100vh - 70px - 35px + 1px);
+    }
+
+    dialog {
+        padding: 3px;
+    }
+
+    .newMessage {
+        flex-direction: column;
+        justify-content: space-between;
+        height: 80px;
+    }
+
+    .newMessage button {
+        padding: 0px 4px 2px 4px;
+        height: 20px;
+        font-size: 12px;
+    }
+
+    .newMessage textarea {
+        margin: 2px 4px;
+        padding: 5px 6px;
+        width: 90px;
+        height: 40px;
+    }
+
+    .messageItem>img {
+        margin: 0 5px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .messageItemText {
+        max-width: 80%;
+        padding: 2px 3px;
+        width: fit-content;
+        border-radius: 3px;
+    }
+
 }

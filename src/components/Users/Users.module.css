@@ -13,8 +13,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background-color: var(--secondary-bg-color);
-}
+    }
 
 .user {
     position: relative;
@@ -44,4 +43,28 @@
     top: 92.5%;
     z-index: 1;
     font-size: 12px;
+}
+
+@media (max-width: 640px) {
+    .user {
+        min-width: 160px;
+        max-width: 160px;
+        min-height: 150px;
+        max-height: 220px;
+    }
+
+    .user button {
+        padding: 3px 6px;
+        font-size: 12px;
+    }
+
+    .userPhoto {
+        width: 60px;
+        height: 72px;
+        border-radius: 5px;
+    }
+
+    .userIdBlock {
+        top: 90%;
+    }
 }

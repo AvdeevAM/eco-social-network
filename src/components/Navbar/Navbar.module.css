@@ -16,11 +16,12 @@
 .nav {
   position: sticky;
   padding-left: 20px;
-  top: 10%;
+  top: 25%;
   font-weight: 600;
   font-size: large;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .item {
@@ -58,9 +59,21 @@
   height: 345px;
   width: 180px;
   bottom: 0px;
+  max-height: 40%;
 }
 
 @media (max-width: 640px) {
+  .navWrapper {
+    height: calc(100vh - 70px - 4px);
+    top: 74px;
+  }
+  
+  .nav {
+    position: sticky;
+    padding-left: 10px;
+
+  }
+
   .treeLogo {
     height: 138px;
     width: 72px;

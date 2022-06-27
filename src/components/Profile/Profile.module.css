@@ -18,3 +18,9 @@
         align-items: center;
     }
 }
+
+@media (max-width: 640px) {
+    .profile {
+        grid-gap: 10px;
+    }
+}
