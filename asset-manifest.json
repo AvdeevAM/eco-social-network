@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/eco-social-network/static/css/main.2aa025f0.css",
-    "main.js": "/eco-social-network/static/js/main.5290b5ae.js",
+    "main.js": "/eco-social-network/static/js/main.d70b1a44.js",
     "static/css/642.5e86c7b6.chunk.css": "/eco-social-network/static/css/642.5e86c7b6.chunk.css",
     "static/js/642.a3bddd9e.chunk.js": "/eco-social-network/static/js/642.a3bddd9e.chunk.js",
     "static/css/833.bf93e5dd.chunk.css": "/eco-social-network/static/css/833.bf93e5dd.chunk.css",
@@ -20,7 +20,7 @@
     "static/media/double-arrow.svg": "/eco-social-network/static/media/double-arrow.080bbf93de2b47533a2c69a918d66d43.svg",
     "static/media/arrow.svg": "/eco-social-network/static/media/arrow.1ad5a7dee3dd34423228b50a23237514.svg",
     "main.2aa025f0.css.map": "/eco-social-network/static/css/main.2aa025f0.css.map",
-    "main.5290b5ae.js.map": "/eco-social-network/static/js/main.5290b5ae.js.map",
+    "main.d70b1a44.js.map": "/eco-social-network/static/js/main.d70b1a44.js.map",
     "642.5e86c7b6.chunk.css.map": "/eco-social-network/static/css/642.5e86c7b6.chunk.css.map",
     "642.a3bddd9e.chunk.js.map": "/eco-social-network/static/js/642.a3bddd9e.chunk.js.map",
     "833.bf93e5dd.chunk.css.map": "/eco-social-network/static/css/833.bf93e5dd.chunk.css.map",
@@ -30,6 +30,6 @@
   },
   "entrypoints": [
     "static/css/main.2aa025f0.css",
-    "static/js/main.5290b5ae.js"
+    "static/js/main.d70b1a44.js"
   ]
 }
