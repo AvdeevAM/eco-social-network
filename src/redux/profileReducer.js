@@ -164,7 +164,6 @@ export const saveData = (profile, setSubmitting, setStatus) => {
       dispatch(getUserProfile(userId));
     } else {
       setStatus(response.data.messages);
-      console.log(response.data.messages);
     }
     setSubmitting(false);
     return response.data;
