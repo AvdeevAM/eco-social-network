@@ -13,9 +13,9 @@ const MyPosts = (props) => {
       likesCount={p.likesCount}
       key={p.id}
       postId={p.id}
-      authorName={p.authorName}
       authorizedUserPhoto={props.authorizedUserPhoto}
       incrementLikes={props.incrementLikes}
+      fullName={props.fullName}
     />
   ));
 

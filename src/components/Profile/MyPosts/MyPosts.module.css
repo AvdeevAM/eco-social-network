@@ -86,8 +86,6 @@
 }
 
 @media (max-width: 640px) {
-    
-
     .newMessage {
         height: 120px;
     }

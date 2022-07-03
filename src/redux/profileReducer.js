@@ -14,44 +14,37 @@ let initialState = {
     {
       id: 1,
       message: "It's my first post",
-      authorName: "Alexander",
       likesCount: "15",
     },
     {
       id: 2,
       message: "Hi, how are you?",
-      authorName: "Alexander",
       likesCount: "20",
     },
     {
       id: 3,
       message: "Bla bla bla",
-      authorName: "Alexander",
       likesCount: "11",
     },
     {
       id: 4,
       message: "Is somebody reading it right now?",
-      authorName: "Alexander",
       likesCount: "2",
     },
     {
       id: 5,
       message: "Very big post incoming...",
-      authorName: "Alexander",
       likesCount: "3",
     },
     {
       id: 6,
       message:
         "I'm a big boy -------------------------------------------------------------------------------------------------------------",
-      authorName: "Alexander",
       likesCount: "20",
     },
     {
       id: 7,
       message: "Ok, u r pretty far from start",
-      authorName: "Alexander",
       likesCount: "20",
     },
   ],

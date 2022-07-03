@@ -13,7 +13,7 @@ const Post = (props) => {
     <div className={s.item}>
       <div className={s.postAuthor}>
         <img src={props.authorizedUserPhoto || default_avatar_small} alt="" />
-        {props.authorName || "anonymous"}
+        {props.fullName.split(" ")[0] || "anonymous"}
       </div>
       <div className={s.postTextAreaWrapper}>
         <div className={s.postTextArea}>

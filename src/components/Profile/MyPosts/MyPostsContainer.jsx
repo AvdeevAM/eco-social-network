@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
   return {
     posts: state.profilePage.posts,
     authorizedUserPhoto: state.auth.photo,
+    fullName: state.auth.fullName,
   };
 };
 
