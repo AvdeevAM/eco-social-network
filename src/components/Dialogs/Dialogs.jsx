@@ -26,7 +26,7 @@ const Dialogs = (props) => {
   const messageSchema = yup.object().shape({
     newMessageBody: yup
       .string()
-      .min(1, "Type text to send message")
+      .min(1, "type text to send message")
       .max(15, "caution: your message is too long to be sent"),
   });
 
@@ -52,10 +52,12 @@ const FormikDialogs = (props) => {
   return (
     <Formik
       onSubmit={props.addNewMessage}
-      initialValues={{}}
+      initialValues={{
+        newMessageBody: "",
+      }}
       validationSchema={props.messageSchema}
     >
-      {({ handleSubmit, isValid, dirty, errors, touched }) => (
+      {({ handleSubmit, isValid, dirty, errors }) => (
         <Form onSubmit={handleSubmit} className={s.newMessage}>
           <div>
             <Field

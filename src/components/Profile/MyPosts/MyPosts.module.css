@@ -74,6 +74,14 @@
     z-index: -1;
 }
 
+.error {
+    margin: 0 0 10px 0;
+    padding: 3px 4px;
+    border: 1px dashed red;
+    color: var(--primary-text-color);
+    font-weight: 700;
+    font-size: 16px;
+}
 
 @media (max-width: 1200px) {
     .newMessageBg {

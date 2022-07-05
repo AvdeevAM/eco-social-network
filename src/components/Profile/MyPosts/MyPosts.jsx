@@ -31,8 +31,8 @@ const MyPosts = (props) => {
   const postSchema = yup.object().shape({
     newPostText: yup
       .string()
-      .max(15, "Message is too long")
-      .required("Type text to send message"),
+      .min(1, "type some text to add post")
+      .max(15, "caution: message is too long")
   });
 
   return (
@@ -52,18 +52,20 @@ const FormikMyPosts = (props) => {
   return (
     <Formik
       onSubmit={props.addPost}
-      initialValues={{}}
+      initialValues={{
+        newPostText: "",
+      }}
       validationSchema={props.postSchema}
     >
       {({ handleSubmit, isValid, dirty, touched, errors }) => (
         <Form onSubmit={handleSubmit} className={s.newMessage}>
           <div className={s.newMessageBg}></div>
           {createField("textarea", "newPostText", "write your thoughts here")}
-          {touched.newPostText && errors.newPostText && (
+          {errors.newPostText && (
             <p className={s.error}>{errors.newPostText}</p>
           )}
-          {createButton(undefined, "Add post", "submit", {
-            disabled: !isValid && !dirty,
+          {createButton(null, "Add post", "submit", {
+            disabled: !(isValid && dirty),
           })}
         </Form>
       )}
