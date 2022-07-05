@@ -4,7 +4,15 @@ import s from "./Contact.module.css";
 const Contact = ({ contactName, contactValue }) => {
   return (
     <div>
-      <b>{contactName}</b>: <a className={s.contactLink} href={contactValue}>{contactValue}</a>
+      <b>{contactName}</b>:{" "}
+      <a
+        className={s.contactLink}
+        href={contactValue}
+        rel="noreferrer"
+        target="_blank"
+      >
+        {contactValue}
+      </a>
     </div>
   );
 };

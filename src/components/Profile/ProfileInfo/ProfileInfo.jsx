@@ -23,8 +23,8 @@ const ProfileInfo = (props) => {
   }
 
   const onPhotoSelected = (e) => {
+    props.savePhoto(e.target.files[0]);
     if (e.target.files.length) {
-      props.savePhoto(e.target.files[0]);
     }
   };
   return (
