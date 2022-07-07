@@ -1,3 +1,25 @@
+.settingsBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  cursor: auto;
+}
+
+.settingsBg.active {
+  display: flex;
+  justify-content: center;
+}
+
+.settingsWrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 1200px;
+}
+
 .settings {
   display: flex;
   flex-direction: column;
@@ -5,9 +27,8 @@
   min-width: 300px;
   width: fit-content;
   height: 150px;
-  position: absolute;
-  left: -400%;
-  top: 110%;
+  position: fixed;
+  top: 70px;
   background-color: var(--primary-bg-color);
   border: 1px solid black;
   box-shadow: 0 0 10px 2px black;
@@ -126,4 +147,47 @@ input:checked+.slider:before {
 .logoutButton>button:active {
   transform: translateY(2px);
   transition-duration: .35s;
+}
+
+@media (max-width: 1200px) {
+  .settings {
+    right: 3%;
+  }
+}
+
+@media (max-width: 640px) {
+  .settings {
+    min-width: 210px;
+    right: 3%;
+    height: 115px;
+  }
+
+  .switch {
+    top: 0%;
+    left: 95%;
+    height: 18px;
+  }
+
+  .slider {
+    width: 32px;
+  }
+
+  .slider:before {
+    height: 12px;
+    width: 10x;
+    left: 3px;
+  }
+
+  input:checked+.slider:before {
+    -webkit-transform: translateX(12px);
+    -ms-transform: translateX(12px);
+    transform: translateX(12px);
+  }
+
+  .logoutButton>button {
+    width: 65px;
+    height: 22px;
+    font-size: 12px;
+    padding: 0;
+  }
 }
