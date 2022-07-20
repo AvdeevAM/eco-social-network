@@ -11,6 +11,7 @@ import sidebarReducer from "./sidebarReducer";
 import usersReducer from "./usersReducer";
 import thunkMiddleware from "redux-thunk";
 import appReducer from "./appReducer";
+import newsReducer from "./newsReducer";
 
 let reducers = combineReducers({
   profilePage: profileReducer,
@@ -19,6 +20,7 @@ let reducers = combineReducers({
   usersPage: usersReducer,
   auth: authReducer,
   app: appReducer,
+  newsPage: newsReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

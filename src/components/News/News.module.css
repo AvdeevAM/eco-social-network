@@ -1,0 +1,13 @@
+.newsContainerContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.lastElement {
+    height: 1px;
+    visibility: hidden;
+}
+
+.newsContent {
+    padding: 10px;
+}

@@ -1,0 +1,57 @@
+.mainPost {
+    margin: 1.5rem 1rem 4.5rem 1rem;
+}
+
+.mainPost>.title {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+}
+
+.mainPost>.body {
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.post {
+    margin: 1.2rem 2rem;
+    padding: .3rem 1.5rem .3rem 1.5rem;
+    border: 0.1rem solid var(--primary-decoration-color);
+    border-radius: 1rem;
+    background-color: var(--primary-bg-color);
+}
+
+.title {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    text-decoration-color: var(--primary-decoration-color);
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
+}
+
+.body {
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.body>img {
+    margin: 2px 5px 0 0;
+    width: 65px;
+    height: 65px;
+    float: left;
+    border-radius: 15px;
+    border: 1px solid var(--primary-decoration-color);
+}
+
+.comments {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comments button {
+    border: .1rem solid black;
+    margin: .3rem;
+    padding: 0 0.8rem;
+    height: 1.8rem;
+}

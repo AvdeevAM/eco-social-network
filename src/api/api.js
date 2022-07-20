@@ -8,6 +8,25 @@ const instance = axios.create({
   },
 });
 
+export const newsAPI = {
+  getNews(currentPage = 1, pageSize = 10) {
+    return axios.get("https://jsonplaceholder.typicode.com/posts", {
+      params: {
+        _limit: pageSize,
+        _page: currentPage,
+      },
+    });
+  },
+  getPhotos(currentPage = 1, pageSize = 10) {
+    return axios.get("https://jsonplaceholder.typicode.com/photos", {
+      params: {
+        _limit: pageSize,
+        _page: currentPage,
+      },
+    });
+  },
+};
+
 export const usersAPI = {
   getUsers(currentPage = 1, pageSize = 50) {
     return instance
