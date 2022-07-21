@@ -1,0 +1,41 @@
+.content {
+    margin: 4px 0;
+    display: flex;
+    align-items: center;
+}
+
+.author {
+    min-width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.author span {
+    font-size: 12px;
+}
+
+.author img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--primary-decoration-color);
+}
+
+.decorationArrow {
+    margin: 0;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid var(--primary-decoration-color);
+}
+
+.body {
+    margin: 12px 0;
+    padding: 4px 16px;
+    text-align: justify;
+    border-radius: 8px 20px 20px 8px;
+    border: 2px solid var(--primary-decoration-color);
+    background: var(--primary-bg-color);
+}

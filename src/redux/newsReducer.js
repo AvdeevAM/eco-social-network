@@ -4,12 +4,13 @@ const SET_NEWS_SUCCESS = "news/SET_NEWS_SUCCESS";
 const SET_TOTAL_NEWS_COUNT = "news/SET_TOTAL_NEWS_COUNT";
 const CLEAR_NEWS_SUCCESS = "news/CLEAR_NEWS_SUCCESS";
 const SET_PHOTOS_SUCCESS = "news/SET_PHOTOS_SUCCESS";
+const SET_COMMENTS_SUCCESS = "news/SET_COMMENTS_SUCCESS";
 
 let initialState = {
   news: [],
   newsPhotos: [],
+  newsComments: [],
   totalNewsCount: null,
-  isFetching: false,
 };
 
 const newsReducer = (state = initialState, action) => {
@@ -24,6 +25,11 @@ const newsReducer = (state = initialState, action) => {
         ...state,
         newsPhotos: [...state.newsPhotos, ...action.payload],
       };
+    case SET_COMMENTS_SUCCESS:
+      return {
+        ...state,
+        newsComments: [...state.newsComments, ...action.payload],
+      };
     case SET_TOTAL_NEWS_COUNT:
       return {
         ...state,
@@ -33,7 +39,8 @@ const newsReducer = (state = initialState, action) => {
       return {
         ...state,
         news: [],
-        newsPhotos: []
+        newsPhotos: [],
+        newsComments: [],
       };
     default:
       return state;
@@ -52,6 +59,10 @@ export const setPhotosSuccess = (payload) => ({
   type: SET_PHOTOS_SUCCESS,
   payload,
 });
+export const setCommentsSuccess = (payload) => ({
+  type: SET_COMMENTS_SUCCESS,
+  payload,
+});
 export const clearNewsSuccess = () => ({
   type: CLEAR_NEWS_SUCCESS,
 });
@@ -61,10 +72,12 @@ export const clearNews = () => (dispatch) => {
 };
 
 export const getNews = (page, limit) => async (dispatch) => {
-  let newsResponse = await newsAPI.getNews(page, limit);
-  let photosResponse = await newsAPI.getPhotos(page, limit);
+  const newsResponse = await newsAPI.getNews(page, limit);
+  const photosResponse = await newsAPI.getPhotos(page, limit);
+  const commentsResponse = await newsAPI.getComments(page, limit * 5);
   dispatch(setTotalNewsCount(newsResponse.headers["x-total-count"]));
   dispatch(setPhotosSuccess(photosResponse.data));
+  dispatch(setCommentsSuccess(commentsResponse.data));
   dispatch(setNewsSuccess(newsResponse.data));
 };
 

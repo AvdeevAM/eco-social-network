@@ -42,7 +42,7 @@ const Header = (props) => {
             />
             {settingsMode && (
               <HeaderSettings
-              deactivateEditMode={deactivateEditMode}
+                deactivateEditMode={deactivateEditMode}
                 settingsMode={settingsMode}
                 darkTheme={props.darkTheme}
                 toggleUITheme={props.toggleUITheme}

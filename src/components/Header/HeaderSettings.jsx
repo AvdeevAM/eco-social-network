@@ -9,6 +9,11 @@ const HeaderSettings = (props) => {
     props.toggleUITheme(checker.checked);
   };
 
+  const logout = () => {
+    props.deactivateEditMode();
+    props.logout();
+  };
+
   return (
     <div
       className={cn(
@@ -19,33 +24,33 @@ const HeaderSettings = (props) => {
       )}
       onClick={props.deactivateEditMode}
     >
-    <div className={s.settingsWrapper}>
-    <div className={s.settings} onClick={(e) => e.stopPropagation()}>
-        <NavLink to="/profile">
-          <h4>{props.fullName}</h4>
-        </NavLink>
-        <div className={s.settingsInfoWrapper}>
-          nickname: {props.login} <br />
-          e-mail: {props.email}
-        </div>
-        <div className={s.settingsButtons}>
-          <div className={s.switchWrapper}>
-            <p>Dark theme:</p>
-            <label className={s.switch}>
-              <input
-                type="checkbox"
-                defaultChecked={props.darkTheme}
-                onClick={changeTheme}
-              />
-              <span className={s.slider + " " + s.round} />
-            </label>
+      <div className={s.settingsWrapper}>
+        <div className={s.settings} onClick={(e) => e.stopPropagation()}>
+          <NavLink to="/profile">
+            <h4>{props.fullName}</h4>
+          </NavLink>
+          <div className={s.settingsInfoWrapper}>
+            nickname: {props.login} <br />
+            e-mail: {props.email}
           </div>
-          {createButton(s.logoutButton, "Log out", "button", {
-            onClick: props.logout,
-          })}
+          <div className={s.settingsButtons}>
+            <div className={s.switchWrapper}>
+              <p>Dark theme:</p>
+              <label className={s.switch}>
+                <input
+                  type="checkbox"
+                  defaultChecked={props.darkTheme}
+                  onClick={changeTheme}
+                />
+                <span className={s.slider + " " + s.round} />
+              </label>
+            </div>
+            {createButton(s.logoutButton, "Log out", "button", {
+              onClick: logout,
+            })}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

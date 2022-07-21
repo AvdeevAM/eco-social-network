@@ -25,6 +25,14 @@ export const newsAPI = {
       },
     });
   },
+  getComments(currentPage = 1, pageSize = 50) {
+    return axios.get("https://jsonplaceholder.typicode.com/comments", {
+      params: {
+        _limit: pageSize,
+        _page: currentPage,
+      },
+    });
+  },
 };
 
 export const usersAPI = {

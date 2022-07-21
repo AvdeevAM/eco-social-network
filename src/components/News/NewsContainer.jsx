@@ -68,6 +68,7 @@ const mapStateToProps = (state) => {
   return {
     news: state.newsPage.news,
     newsPhotos: state.newsPage.newsPhotos,
+    newsComments: state.newsPage.newsComments,
     totalNewsCount: state.newsPage.totalNewsCount,
     isFetching: state.newsPage.isFetching,
   };

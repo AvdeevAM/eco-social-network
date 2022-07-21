@@ -1,6 +1,6 @@
 .preloader {
     margin: auto;
-    position: absolute;
+    position: fixed;
     top: calc(50% - 150px);
     left: calc(50% - 150px);
     z-index: 10;
