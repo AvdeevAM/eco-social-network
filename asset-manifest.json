@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/eco-social-network/static/css/main.3071a9e5.css",
-    "main.js": "/eco-social-network/static/js/main.a8417360.js",
+    "main.css": "/eco-social-network/static/css/main.31779924.css",
+    "main.js": "/eco-social-network/static/js/main.3873303c.js",
     "static/css/642.5e86c7b6.chunk.css": "/eco-social-network/static/css/642.5e86c7b6.chunk.css",
     "static/js/642.562d309c.chunk.js": "/eco-social-network/static/js/642.562d309c.chunk.js",
     "static/css/833.8c714ba4.chunk.css": "/eco-social-network/static/css/833.8c714ba4.chunk.css",
@@ -19,8 +19,8 @@
     "index.html": "/eco-social-network/index.html",
     "static/media/double-arrow.svg": "/eco-social-network/static/media/double-arrow.080bbf93de2b47533a2c69a918d66d43.svg",
     "static/media/arrow.svg": "/eco-social-network/static/media/arrow.1ad5a7dee3dd34423228b50a23237514.svg",
-    "main.3071a9e5.css.map": "/eco-social-network/static/css/main.3071a9e5.css.map",
-    "main.a8417360.js.map": "/eco-social-network/static/js/main.a8417360.js.map",
+    "main.31779924.css.map": "/eco-social-network/static/css/main.31779924.css.map",
+    "main.3873303c.js.map": "/eco-social-network/static/js/main.3873303c.js.map",
     "642.5e86c7b6.chunk.css.map": "/eco-social-network/static/css/642.5e86c7b6.chunk.css.map",
     "642.562d309c.chunk.js.map": "/eco-social-network/static/js/642.562d309c.chunk.js.map",
     "833.8c714ba4.chunk.css.map": "/eco-social-network/static/css/833.8c714ba4.chunk.css.map",
@@ -29,7 +29,7 @@
     "950.62e0a28f.chunk.js.map": "/eco-social-network/static/js/950.62e0a28f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3071a9e5.css",
-    "static/js/main.a8417360.js"
+    "static/css/main.31779924.css",
+    "static/js/main.3873303c.js"
   ]
 }
